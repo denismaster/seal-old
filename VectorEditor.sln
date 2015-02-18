@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorEngine.Core", "VectorEngine.Core\VectorEngine.Core.csproj", "{6E5D8C30-6C22-4BCF-80AB-680D20FDA1B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorEngine.Controls", "VectorEngine.Controls\VectorEngine.Controls.csproj", "{23203865-502B-4645-9958-61DD72EADD13}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E5D8C30-6C22-4BCF-80AB-680D20FDA1B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5D8C30-6C22-4BCF-80AB-680D20FDA1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5D8C30-6C22-4BCF-80AB-680D20FDA1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5D8C30-6C22-4BCF-80AB-680D20FDA1B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23203865-502B-4645-9958-61DD72EADD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23203865-502B-4645-9958-61DD72EADD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23203865-502B-4645-9958-61DD72EADD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23203865-502B-4645-9958-61DD72EADD13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
