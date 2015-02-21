@@ -56,15 +56,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Figures\Figure.cs" />
+    <Compile Include="Figures\IBoundable.cs" />
+    <Compile Include="Figures\IColorable.cs" />
+    <Compile Include="Figures\ILineEndable.cs" />
+    <Compile Include="Figures\IMoveable.cs" />
+    <Compile Include="Figures\IScaleable.cs" />
     <Compile Include="Figures\VectorObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Drawing\" />
     <Folder Include="IO\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassScheme.cd" />
+    <Compile Include="Drawing\DrawingContext.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

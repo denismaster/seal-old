@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SharpDX;
 using SharpDX.Direct2D1;
-using VectorEngine.Core.Drawing;
+using SharpDX;
 
 namespace VectorEngine.Core.Figures
 {
-    public abstract class Figure : VectorObject
+    public interface IBoundable
     {
-        public abstract bool IsPointInside(Point p);
-
-        public static Factory D2DFactory
+        RectangleF Bounds
+        {
+            get;
+        }
+        //Размер фигуры
+        Size2F Size
         {
             get;
             set;
         }
-
-        public abstract void Draw(DrawingContext g);
     }
 }
