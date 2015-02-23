@@ -20,5 +20,7 @@ namespace VectorEngine.Core.Figures
         }
 
         public abstract void Draw(DrawingContext g);
+
+        public abstract ICollection<Marker> CreateMarkers();
     }
 }

@@ -60,7 +60,9 @@
     <Compile Include="Figures\IColorable.cs" />
     <Compile Include="Figures\ILineEndable.cs" />
     <Compile Include="Figures\IMoveable.cs" />
+    <Compile Include="Figures\IRotateable.cs" />
     <Compile Include="Figures\IScaleable.cs" />
+    <Compile Include="Figures\Marker.cs" />
     <Compile Include="Figures\VectorObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
