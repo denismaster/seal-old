@@ -24,3 +24,4 @@ namespace VectorEngine.Core.Figures
         public abstract ICollection<Marker> CreateMarkers();
     }
 }
+//i made it just for lulz
