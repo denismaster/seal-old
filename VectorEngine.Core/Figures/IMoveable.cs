@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SharpDX.Direct2D1;
 using SharpDX;
-namespace VectorEngine.Core.Figures
+namespace Seal2D.Core.Figures
 {
     public class LocationEventsArgs : EventArgs
     {

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorEngine.Core", "VectorEngine.Core\VectorEngine.Core.csproj", "{6E5D8C30-6C22-4BCF-80AB-680D20FDA1B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seal2D.Core", "VectorEngine.Core\Seal2D.Core.csproj", "{6E5D8C30-6C22-4BCF-80AB-680D20FDA1B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorEngine.Controls", "VectorEngine.Controls\VectorEngine.Controls.csproj", "{23203865-502B-4645-9958-61DD72EADD13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seal2D.Control", "VectorEngine.Controls\Seal2D.Control.csproj", "{23203865-502B-4645-9958-61DD72EADD13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

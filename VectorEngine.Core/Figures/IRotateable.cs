@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VectorEngine.Core.Figures
+namespace Seal2D.Core.Figures
 {
     public interface IRotateable
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SharpDX.Direct2D1;
 using SharpDX;
 
-namespace VectorEngine.Core.Figures
+namespace Seal2D.Core.Figures
 {
     public interface IBoundable
     {
@@ -15,10 +15,5 @@ namespace VectorEngine.Core.Figures
             get;
         }
         //Размер фигуры
-        Size2F Size
-        {
-            get;
-            set;
-        }
     }
 }

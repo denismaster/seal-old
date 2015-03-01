@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 namespace Seal2D.Core.Figures
 {
-    public interface IScaleable : IBoundable 
+    public abstract class Line : Figure
     {
-        Size2F Size
+        public ILineEndable From
         {
             get;
             set;
         }
-        void Scale(float scaleX, float scaleY);
+
+        public ILineEndable To
+        {
+            get;
+            set;
+        }
     }
 }

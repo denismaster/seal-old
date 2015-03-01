@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{23203865-502B-4645-9958-61DD72EADD13}</ProjectGuid>
+    <ProjectGuid>{6E5D8C30-6C22-4BCF-80AB-680D20FDA1B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VectorEngine.Controls</RootNamespace>
-    <AssemblyName>VectorEngine.Controls</AssemblyName>
+    <RootNamespace>Seal2D.Core</RootNamespace>
+    <AssemblyName>VectorEngine.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>54da4fe0</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>b0dd38ae</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SharpDX">
       <HintPath>$(SharpDXPackageBinDir)\SharpDX.dll</HintPath>
     </Reference>
@@ -51,9 +55,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Figures\Figure.cs" />
+    <Compile Include="Figures\FigureBase.cs" />
+    <Compile Include="Figures\IBoundable.cs" />
+    <Compile Include="Figures\IColorable.cs" />
+    <Compile Include="Figures\ILineEndable.cs" />
+    <Compile Include="Figures\IMoveable.cs" />
+    <Compile Include="Figures\IRotateable.cs" />
+    <Compile Include="Figures\IScaleable.cs" />
+    <Compile Include="Figures\Marker.cs" />
+    <Compile Include="Figures\VectorObject.cs" />
+    <Compile Include="Figures\ImageFigure.cs" />
+    <Compile Include="Figures\Line.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Figures\SolidFigure.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="IO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassScheme.cd" />
+    <Compile Include="Drawing\DrawingContext.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

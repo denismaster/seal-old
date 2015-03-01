@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SharpDX;
 
-namespace VectorEngine.Core.Figures
+namespace Seal2D.Core.Figures
 {
 
     public interface ILineEndable

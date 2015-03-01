@@ -7,7 +7,7 @@ using SharpDX;
 using D2D=SharpDX.Direct2D1;
 using DW=SharpDX.DirectWrite; 
 
-namespace VectorEngine.Core.Drawing
+namespace Seal2D.Core.Drawing
 {
     public class DrawingContext
     {

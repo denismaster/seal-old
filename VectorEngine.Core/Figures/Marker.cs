@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SharpDX;
-namespace VectorEngine.Core.Figures
+namespace Seal2D.Core.Figures
 {
-    public abstract class Marker : Figure, IMoveable
+    public abstract class Marker : Seal2D.Core.FigureBase, IMoveable
     {
         public Marker()
         {
