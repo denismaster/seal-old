@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Seal2D.Core</RootNamespace>
-    <AssemblyName>VectorEngine.Core</AssemblyName>
+    <AssemblyName>Seal2D.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>b0dd38ae</NuGetPackageImportStamp>
@@ -74,8 +74,8 @@
     <Folder Include="IO\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassScheme.cd" />
     <Compile Include="Drawing\DrawingContext.cs" />
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SharpDX;
 namespace Seal2D.Core.Figures
 {
-    public abstract class Marker : Seal2D.Core.FigureBase, IMoveable
+    public abstract class Marker : Seal2D.Core.Figures.FigureBase, IMoveable
     {
         public Marker()
         {
@@ -45,7 +45,7 @@ namespace Seal2D.Core.Figures
             }
         }
 
-        protected static new int defaultSize = 2;
+        protected static  int defaultSize = 2;
 
         public Figure targetFigure;
 
@@ -73,15 +73,15 @@ namespace Seal2D.Core.Figures
     {
         public override void UpdateLocation()
         {
-            RectangleF bounds = (targetFigure as SolidFigure).Bounds;
+            RectangleF bounds = (targetFigure as IBoundable).Bounds;
             Location = new Point((int)Math.Round(bounds.Right) + defaultSize / 2, (int)Math.Round(bounds.Bottom) + defaultSize / 2);
         }
 
         public override void Offset(int dx, int dy)
         {
             base.Offset(dx, dy);
-            (targetFigure as SolidFigure).Size = new Size2F((targetFigure as SolidFigure).Size.Width + dx,
-                (targetFigure as SolidFigure).Size.Height + dy);
+            (targetFigure as IScaleable).Size = new Size2F((targetFigure as IScaleable).Size.Width + dx,
+                (targetFigure as IScaleable).Size.Height + dy);
         }
     }
 }

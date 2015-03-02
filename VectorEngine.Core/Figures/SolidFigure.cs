@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Seal2D.Core.Figures;
+using SharpDX;
 
 namespace Seal2D.Core.Figures
 {
@@ -12,6 +13,7 @@ namespace Seal2D.Core.Figures
         private SharpDX.Color4 _brushColor = SharpDX.Color.White;
         private SharpDX.Point _location;
         public event EventHandler<Figures.LocationEventsArgs> FigureMoved;
+
         public SharpDX.Direct2D1.Geometry Geometry
         {
             get;
@@ -71,7 +73,7 @@ namespace Seal2D.Core.Figures
             if (FigureMoved != null)
                 FigureMoved(this, new LocationEventsArgs(Location.X, Location.Y));
         }
-        public override bool IsInsidePoint(Point p)
+        public override bool IsPointInside(Point p)
         {
             Point here = new Point(p.X - Location.X, p.Y - Location.Y);
             if (Geometry != null)
@@ -79,7 +81,7 @@ namespace Seal2D.Core.Figures
             else
                 return false;
         }
-        public ICollection<Marker> CreateMarkers()
+        public override ICollection<Marker> CreateMarkers()
         {
             LinkedList<Marker> markers = new LinkedList<Marker>();
             Marker m = new SizeMarker();
