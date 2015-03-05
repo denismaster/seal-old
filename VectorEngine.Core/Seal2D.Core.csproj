@@ -55,8 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Figures\Diagram.cs" />
     <Compile Include="Figures\Figure.cs" />
     <Compile Include="Figures\FigureBase.cs" />
+    <Compile Include="Figures\GeometryFigure.cs" />
     <Compile Include="Figures\IBoundable.cs" />
     <Compile Include="Figures\IColorable.cs" />
     <Compile Include="Figures\ILineEndable.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Figures\IRotateable.cs" />
     <Compile Include="Figures\IScaleable.cs" />
     <Compile Include="Figures\Marker.cs" />
+    <Compile Include="Figures\ObjectDiagram.cs" />
     <Compile Include="Figures\VectorObject.cs" />
     <Compile Include="Figures\ImageFigure.cs" />
     <Compile Include="Figures\Line.cs" />

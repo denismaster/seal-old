@@ -96,6 +96,23 @@ namespace Seal2D.Core.Figures
                 FigureMoved(sender, e);
             }
         }
+        public override void Draw(Drawing.DrawingContext dc)
+        {
+            try
+            {
+                dc.D2DTarget.Transform = Matrix.AffineTransformation2D(1.0f, MathUtil.DegreesToRadians(0), new Vector2
+                    (this.Location.X, this.Location.Y));
+                dc.SolidBrush.Color = this.Color;
+                dc.D2DTarget.FillGeometry(this.Geometry, dc.SolidBrush);
+                dc.D2DTarget.DrawGeometry(this.Geometry, dc.StrokeBrush, 1);
+                //if (this.CompiledText != null && this.TextRect.Width >= this.CompiledText.Metrics.WidthIncludingTrailingWhitespace)
+                //    g.DrawTextLayout(this.TextRect.TopLeft, this.CompiledText, dc.StrokeBrush);
+            }
+            finally
+            {
+                dc.D2DTarget.Transform = SharpDX.Matrix.Identity;
+            }
+        }
         
     }
 }

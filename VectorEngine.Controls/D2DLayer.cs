@@ -12,8 +12,8 @@ namespace Seal2D.Control
 {
     public abstract class D2DLayer : System.Windows.Forms.Control
     {
-        public SharpDX.Direct2D1.FactoryType FactoryType { get; set; }
-        public DebugLevel DebugLevel { get; set; }
+        protected SharpDX.Direct2D1.FactoryType FactoryType { get; set; }
+        protected DebugLevel DebugLevel { get; set; }
         public RenderTargetProperties renderTargetProperties = new RenderTargetProperties()
         {
             Type = RenderTargetType.Hardware,
@@ -51,9 +51,16 @@ namespace Seal2D.Control
         }
         protected override void OnResize(EventArgs e)
         {
-            if (renderTarget != null && !renderTarget.IsDisposed)
-                renderTarget.Resize(new SharpDX.Size2(Width, Height));
-            base.OnResize(e);
+            try
+            {
+                if (renderTarget != null && !renderTarget.IsDisposed)
+                    renderTarget.Resize(new SharpDX.Size2(Width, Height));
+                
+            }
+            finally
+            {
+                base.OnResize(e);
+            }
         }
 
         //Render Objects
@@ -68,7 +75,7 @@ namespace Seal2D.Control
                 PixelSize = new SharpDX.Size2(ClientSize.Width, ClientSize.Height),
                 PresentOptions = PresentOptions.Immediately
             };
-
+            
             renderTarget = new WindowRenderTarget(D2DFactory, renderTargetProperties, hwRenderTargetProperties);
             RenderObjectsCreated = true;
             OnCreateRenderObjects();

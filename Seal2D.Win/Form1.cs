@@ -16,5 +16,11 @@ namespace Seal2D.Win
         {
             InitializeComponent();
         }
+
+        private void seal2DCanvas1_Click(object sender, EventArgs e)
+        {
+            seal2DCanvas1.Diagram.Add(new Seal2D.Core.Figures.GeometryFigure());
+            seal2DCanvas1.Invalidate();
+        }
     }
 }
