@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Seal2D.Core.Figures
 {
-    public abstract class FigureBase : Seal2D.Core.Figures.VectorObject
+    public abstract class Figure : Seal2D.Core.Figures.VectorObject
     {
         public static SharpDX.Direct2D1.Factory D2DFactory
         {

@@ -6,7 +6,7 @@ namespace Seal2D.Core.Figures
     {
        public GeometryFigure()
         {
-           this.Geometry = new RectangleGeometry(D2DFactory,new Rectangle(100,100,20,20));
+           this.Geometry = new RectangleGeometry(D2DFactory,new Rectangle(0,0,20,20));
         }
     }
 }

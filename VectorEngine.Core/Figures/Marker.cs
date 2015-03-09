@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SharpDX;
 namespace Seal2D.Core.Figures
 {
-    public abstract class Marker : Seal2D.Core.Figures.FigureBase, IMoveable
+    public abstract class Marker : Seal2D.Core.Figures.Figure, IMoveable
     {
         public Marker()
         {

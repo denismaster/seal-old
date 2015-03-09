@@ -24,6 +24,7 @@ namespace Seal2D.Core.Figures
             get;
             set;
         }
+        
     }
 
 }

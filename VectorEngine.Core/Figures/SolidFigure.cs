@@ -7,19 +7,18 @@ using SharpDX;
 
 namespace Seal2D.Core.Figures
 {
-    public abstract class SolidFigure : Figure, IMoveable, ILineEndable, IBoundable,IColorable
+    public abstract class SolidFigure : Figure, ILineEndable, IBoundable, IColorable
     {
         public const int defaultSize = 25;
         private SharpDX.Color4 _brushColor = SharpDX.Color.White;
         private SharpDX.Point _location;
-        public event EventHandler<Figures.LocationEventsArgs> FigureMoved;
 
-        public SharpDX.Direct2D1.Geometry Geometry
+        public virtual SharpDX.Direct2D1.Geometry Geometry
         {
             get;
             set;
         }
-        public SharpDX.Color4 Color
+        public virtual SharpDX.Color4 Color
         {
             get
             {
@@ -30,7 +29,7 @@ namespace Seal2D.Core.Figures
                 _brushColor = value;
             }
         }
-        public SharpDX.Point Location
+        public virtual SharpDX.Point Location
         {
             get
             {
@@ -41,7 +40,7 @@ namespace Seal2D.Core.Figures
                 _location = value;
             }
         }
-        public SharpDX.Vector2 LineEnd
+        public virtual SharpDX.Vector2 LineEnd
         {
             get
             {
@@ -51,27 +50,13 @@ namespace Seal2D.Core.Figures
                 return v;
             }
         }
-        public SharpDX.RectangleF Bounds
+        public virtual SharpDX.RectangleF Bounds
         {
             get
             {
                 RectangleF bounds = Geometry.GetBounds();
                 return new RectangleF(bounds.Left + Location.X, bounds.Top + Location.Y, bounds.Width, bounds.Height);
             }
-        }
-        public void Offset(int dx, int dy)
-        {
-            _location.X += dx;
-            _location.Y += dy;
-            if (_location.X < 0)
-            {
-                _location.X = 0;
-            }
-            if (_location.Y < 0)
-                _location.Y = 0;
-
-            if (FigureMoved != null)
-                FigureMoved(this, new LocationEventsArgs(Location.X, Location.Y));
         }
         public override bool IsPointInside(Point p)
         {
@@ -81,21 +66,7 @@ namespace Seal2D.Core.Figures
             else
                 return false;
         }
-        public override ICollection<Marker> CreateMarkers()
-        {
-            LinkedList<Marker> markers = new LinkedList<Marker>();
-            Marker m = new SizeMarker();
-            m.targetFigure = this;
-            markers.AddLast(m);
-            return markers;
-        }
-        public void OnFigureMove(object sender, Figures.LocationEventsArgs e)
-        {
-            if (FigureMoved != null)
-            {
-                FigureMoved(sender, e);
-            }
-        }
+
         public override void Draw(Drawing.DrawingContext dc)
         {
             try
