@@ -26,8 +26,8 @@ namespace Seal2D.Core.Figures
         }
         void Offset(int dx, int dy);
 
-        event EventHandler<LocationEventsArgs> FigureMoved;
+        //event EventHandler<LocationEventsArgs> FigureMoved;
 
-        void OnFigureMove(object sender, LocationEventsArgs e);
+        //void OnFigureMove(object sender, LocationEventsArgs e);
     }
 }

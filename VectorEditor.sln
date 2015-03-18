@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seal2D.Control", "VectorEng
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seal2D.Win", "Seal2D.Win\Seal2D.Win.csproj", "{B393D330-BE42-4829-A963-1050F81BFA10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seal2D.Tests", "Seal2D.Tests\Seal2D.Tests.csproj", "{352DE412-6CFE-4092-AFA1-21DD55CC5368}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B393D330-BE42-4829-A963-1050F81BFA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B393D330-BE42-4829-A963-1050F81BFA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B393D330-BE42-4829-A963-1050F81BFA10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{352DE412-6CFE-4092-AFA1-21DD55CC5368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{352DE412-6CFE-4092-AFA1-21DD55CC5368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{352DE412-6CFE-4092-AFA1-21DD55CC5368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{352DE412-6CFE-4092-AFA1-21DD55CC5368}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

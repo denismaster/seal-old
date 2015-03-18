@@ -16,5 +16,6 @@ namespace Seal2D.Core.Figures
         public abstract bool IsPointInside(SharpDX.Point p);
 
         public abstract void Draw(Drawing.DrawingContext dc);
+        
     }
 }

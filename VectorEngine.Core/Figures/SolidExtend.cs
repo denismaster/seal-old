@@ -4,23 +4,28 @@ using SharpDX;
 using SharpDX.Direct2D1;
 namespace Seal2D.Core.Figures
 {
-    public class ExtendedSolidFigure :SolidFigure, IMarkerable,IScaleable, IMoveable
+    public class SolidExtend : SolidFigure, IMarkerable, IScaleable
     {
-        public ExtendedSolidFigure(SolidFigure f)
+        private SolidFigure _figure;
+
+        public SolidExtend(SolidFigure f)
         {
-            this.Figure = f;
+            _figure = f;
         }
-        public SolidFigure Figure
+
+        public Figure Figure
         {
-            get;
-            set;
+            get
+            {
+                return _figure;
+            }
         }
         public SharpDX.Size2F Size
         {
-            get { return new Size2F(Figure.Geometry.GetBounds().Width, Figure.Geometry.GetBounds().Height); }
+            get { return new Size2F(_figure.Geometry.GetBounds().Width, _figure.Geometry.GetBounds().Height); }
             set
             {
-                Size2F oldSize = new Size2F(Figure.Geometry.GetBounds().Width, Figure.Geometry.GetBounds().Height);
+                Size2F oldSize = new Size2F(_figure.Geometry.GetBounds().Width, _figure.Geometry.GetBounds().Height);
                 Size2F newSize = new Size2F(Math.Max(1, value.Width), Math.Max(1, value.Height));
                 //коэффициент шкалировани по x
                 float kx;
@@ -43,48 +48,41 @@ namespace Seal2D.Core.Figures
         {
             get
             {
-                return Figure.Bounds;
+                return _figure.Bounds;
             }
         }
         public override Point Location
         {
             get
             {
-                return Figure.Location;
+                return _figure.Location;
             }
             set
             {
-                Figure.Location = value;
+                _figure.Location = value;
             }
+        }
+        public override bool IsPointInside(Point p)
+        {
+            return _figure.IsPointInside(p);
         }
         public void Offset(int dx, int dy)
         {
-            var l = Location;
-            l.X += dx;
-            l.Y += dy;
-            if (l.X < 0)
-            {
-                l.X = 0;
-            }
-            if (l.Y < 0)
-                l.Y = 0;
-            Location = l;
-            if (FigureMoved != null)
-                FigureMoved(this, new LocationEventsArgs(Figure.Location.X, Figure.Location.Y));
+            _figure.Offset(dx, dy);
         }
         public  ICollection<Marker> CreateMarkers()
         {
             LinkedList<Marker> markers = new LinkedList<Marker>();
             Marker m = new SizeMarker();
-            m.targetFigure = this;
+             m.targetFigure = this;
             markers.AddLast(m);
             return markers;
         }
         public virtual void Scale(float scaleX, float scaleY)
         {
-            //var TextRect = Figure.TextRect;
+            //var TextRect = _figure.TextRect;
             Matrix m = Matrix.Scaling(scaleX, scaleY, 1);
-            Figure.Geometry = new TransformedGeometry(D2DFactory, this.Figure.Geometry, m);
+            _figure.Geometry = new TransformedGeometry(SolidFigure.D2DFactory, this._figure.Geometry, m);
             //TextRect = new RectangleF(TextRect.Left * scaleX, TextRect.Top * scaleY, TextRect.Width + scaleX, TextRect.Height + scaleY);
             //if (TextPath != null)
             //{

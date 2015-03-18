@@ -1,42 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Seal2D.Core.Drawing.DrawingContext" Collapsed="true">
-    <Position X="12.25" Y="0.5" Width="1.5" />
+    <Position X="31.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Drawing\DrawingContext.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Seal2D.Core.Figures.Figure" Collapsed="true">
-    <Position X="5.25" Y="1.75" Width="1.5" />
+    <Position X="16.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\FigureBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Seal2D.Core.Figures.ImageFigure" Collapsed="true">
-    <Position X="3" Y="3.25" Width="1.5" />
+    <Position X="15.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Figures\ImageFigure.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Seal2D.Core.Figures.LocationEventsArgs" Collapsed="true">
-    <Position X="14" Y="0.5" Width="1.5" />
+    <Position X="33" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>Figures\IMoveable.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Seal2D.Core.Figures.Line" Collapsed="true">
-    <Position X="9.75" Y="3.25" Width="1.5" />
+  <Class Name="Seal2D.Core.Figures.LineBase" Collapsed="true">
+    <Position X="24.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\Line.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Seal2D.Core.Figures.Marker" Collapsed="true">
-    <Position X="0.75" Y="3.25" Width="1.5" />
+    <Position X="6.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAgAAABAAAgAAAAIAAgAAAAAIAAAAACAAAAAAgAA=</HashCode>
       <FileName>Figures\Marker.cs</FileName>
@@ -44,93 +45,178 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Seal2D.Core.Figures.SizeMarker" Collapsed="true">
-    <Position X="0.75" Y="4.75" Width="1.5" />
+    <Position X="4" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Figures\Marker.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Seal2D.Core.Figures.SolidFigure" Collapsed="true">
-    <Position X="5.25" Y="3.25" Width="1.5" />
+    <Position X="17.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAABAAAgAAAAIBAAAAAAAIAAAAACgAgAAAggA=</HashCode>
+      <HashCode>gAAgAAAAABAAAgAAAAIBAgAAAAAIAAAAACAAgAAAggA=</HashCode>
       <FileName>Figures\SolidFigure.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Seal2D.Core.Figures.VectorObject" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Position X="15.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\VectorObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Seal2D.Core.Figures.Group" Collapsed="true">
-    <Position X="7.5" Y="3.25" Width="1.5" />
+  <Class Name="Seal2D.Core.Figures.GroupFigure" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAABAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\Group.cs</FileName>
+      <HashCode>gAIAAAAAABAAAgAAAAIAAgAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Figures\GroupFigure.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Seal2D.Core.Figures.ExtendedSolidFigure">
-    <Position X="5.25" Y="4.75" Width="1.5" />
+  <Class Name="Seal2D.Core.Figures.SolidExtend" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAgAAAAAIAAgAAAAAAEAAAAAAAAAAAggA=</HashCode>
-      <FileName>Figures\ExtendedSolidFigure.cs</FileName>
+      <HashCode>gAAAAAAAABAAgAAAAAIABgAAAAAAEAAAAAgAAAAAggA=</HashCode>
+      <FileName>Figures\SolidExtend.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Seal2D.Core.ObjectFactory">
-    <Position X="11" Y="6.75" Width="1.5" />
+  <Class Name="Seal2D.Core.ObjectFactory" Collapsed="true">
+    <Position X="34.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>ObjectFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Seal2D.Core.Line" Collapsed="true">
+    <Position X="21" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\SimpleLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.ArrowedLine" Collapsed="true">
+    <Position X="22" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\ArrowedLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.Curve" Collapsed="true">
+    <Position X="26.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\Curve.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.EndLineMarker" Collapsed="true">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\EndLineMarker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.ControlMarker" Collapsed="true">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\ControlMarker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.WaveCurve" Collapsed="true">
+    <Position X="28.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\WaveCurve.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.BezierCurve" Collapsed="true">
+    <Position X="26.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\BezierCurve.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.PolyLine" Collapsed="true">
+    <Position X="19.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\PolyLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.PolyCurve" Collapsed="true">
+    <Position X="24.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\PolyCurve.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.Figures.Group" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\GroupFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.Animation" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal2D.Core.StrokeFigure" Collapsed="true">
+    <Position X="10.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\StrokeFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Seal2D.Core.Figures.IBoundable" Collapsed="true">
-    <Position X="0.5" Y="6.5" Width="1.5" />
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Figures\IBoundable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Seal2D.Core.Figures.IColorable" Collapsed="true">
-    <Position X="12.25" Y="1.75" Width="1.5" />
+    <Position X="31.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Figures\IColorable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Seal2D.Core.Figures.ILineEndable" Collapsed="true">
-    <Position X="14" Y="1.75" Width="1.5" />
+    <Position X="33" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\ILineEndable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Seal2D.Core.Figures.IMoveable" Collapsed="true">
-    <Position X="12.25" Y="2.5" Width="1.5" />
+    <Position X="31.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAAAAAAIAAgAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Figures\IMoveable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Seal2D.Core.Figures.IRotateable" Collapsed="true">
-    <Position X="14" Y="2.5" Width="1.5" />
+    <Position X="33" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Figures\IRotateable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Seal2D.Core.Figures.IScaleable" Collapsed="true">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+    <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\IScaleable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Seal2D.Core.Figures.IMarkerable" Collapsed="true">
-    <Position X="15.75" Y="1.75" Width="1.5" />
+    <Position X="34.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Figures\IMarkerable.cs</FileName>

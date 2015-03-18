@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 namespace Seal2D.Core.Figures
 {
-    public abstract class Line : Figure
+    public abstract class LineBase : Figure
     {
         public ILineEndable From
         {

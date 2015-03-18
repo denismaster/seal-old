@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Seal2D.Core.Drawing;
 using Seal2D.Core.Figures;
+using Seal2D.Control.Controllers;
 using SharpDX;
 namespace Seal2D.Control
 {
     public class Seal2DCanvas : D2DCanvas
     {
-        protected Figure draggedFigure;
+        //protected Figure draggedFigure;
         public Diagram Diagram
-        {
-            get;
-            set;
-        }
-        public Point StartDragPoint
         {
             get;
             set;
@@ -27,73 +23,96 @@ namespace Seal2D.Control
             get;
             set;
         }
+        protected Seal2D.Core.ObjectFactory ObjectManager
+        {
+            get;
+            set;
+        }
+        public Controller ModeController
+        {
+            get
+            {
+                return _controller;
+            }
+            set
+            {
+                _controller = value;
+            }
+        }
+        private Controller _controller = null;
         public Seal2DCanvas()
         {
-            Diagram = new ObjectDiagram(); 
+            Diagram = new ObjectDiagram();
         }
         protected override void OnCreateRenderObjects()
         {
             base.OnCreateRenderObjects();
             Seal2D.Core.Figures.Figure.D2DFactory = this.D2DFactory;
             Context = new DrawingContext(renderTarget);
+            ObjectManager = new Seal2D.Core.ObjectFactory();
+            _controller = new SelectionController(Diagram);
         }
         protected override void OnRender()
         {
             renderTarget.Clear(Color.White);
-            foreach(var l in Diagram.Lines)
+            foreach (var l in Diagram.Lines)
             {
                 l.Draw(Context);
             }
-            foreach(var f in Diagram.Figures)
+            foreach (var f in Diagram.Figures)
             {
                 f.Draw(Context);
             }
-        }
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-            draggedFigure = null;
-        }
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            draggedFigure = this.Diagram.FindFigureByPoint(new SharpDX.Point(e.Location.X, e.Location.Y));
-            if (!(draggedFigure is Marker))
+            if (Diagram.SelectedFigure is Group)
             {
-                if (draggedFigure is SolidFigure)
-                    draggedFigure = new Seal2D.Core.Figures.ExtendedSolidFigure(draggedFigure as Seal2D.Core.Figures.SolidFigure);
-
-                this.Diagram.SelectedFigure = draggedFigure;
-            }
-            this.StartDragPoint = new SharpDX.Point(e.Location.X, e.Location.Y);
-        }
-        protected override  void OnMouseMove(MouseEventArgs e)
-        {
-            var mouseLocation = new SharpDX.Point(e.Location.X, e.Location.Y);
-            if (e.Button == MouseButtons.Left)
-            {
-                IMoveable q = draggedFigure as IMoveable;
-                if (q != null)
+                var q = Diagram.SelectedFigure as GroupFigure;
+                foreach (var d in q.Childs)
                 {
-                    var dx = mouseLocation.X - this.StartDragPoint.X;
-                    var dy = mouseLocation.Y - this.StartDragPoint.Y;
-                    q.Offset(dx, dy);
-                    //if (!(draggedFigure is EndLineMarker))
-                    //    UpdateMarkers();
-                    this.Invalidate();
+                    IBoundable r = d as IBoundable;
+
+                    if (r != null)
+                    {
+                        DrawSelectionRect(r);
+                    }
                 }
             }
             else
             {
-                var figure = this.Diagram.FindFigureByPoint(mouseLocation);
-                // this.Tag = figure != null ? figure.ToString() : "null";
-                if (figure is Marker)
-                    this.Cursor = Cursors.SizeAll;
-                else
-                    if (figure != null)
-                        this.Cursor = Cursors.Hand;
-                    else
-                        this.Cursor = Cursors.Cross;
+                IBoundable r = Diagram.SelectedFigure as IBoundable;
+                if (r != null)
+                {
+                    DrawSelectionRect(r);
+                }
             }
-            this.StartDragPoint = mouseLocation;
+            
+            _controller.RenderAction(Context);
+        }
+
+        private void DrawSelectionRect(IBoundable r)
+        {
+            var g = Context.D2DTarget;
+            g.Transform = SharpDX.Matrix.Translation(r.Bounds.Left, r.Bounds.Top, 0);
+            Context.SolidBrush.Color = Color.SkyBlue;
+            g.DrawRectangle(new RectangleF(-2, -2, r.Bounds.Width + 4, r.Bounds.Height + 4), Context.SolidBrush, 1);
+            g.Transform = SharpDX.Matrix.Identity;
+        }
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            _controller.MouseUpAction(e);
+            Invalidate();
+        }
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+
+            _controller.MouseDownAction(e);
+            this.Invalidate();
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+
+            _controller.MouseMoveAction(e);
+            this.Cursor = _controller.ActiveCursor;
+            Invalidate();
         }
     }
 }

@@ -7,7 +7,7 @@ using SharpDX;
 
 namespace Seal2D.Core.Figures
 {
-    public abstract class SolidFigure : Figure, ILineEndable, IBoundable, IColorable
+    public abstract class SolidFigure : Figure, ILineEndable, IBoundable, IColorable, IMoveable
     {
         public const int defaultSize = 25;
         private SharpDX.Color4 _brushColor = SharpDX.Color.White;
@@ -66,7 +66,21 @@ namespace Seal2D.Core.Figures
             else
                 return false;
         }
-
+        public void Offset(int dx, int dy)
+        {
+            var l = Location;
+            l.X += dx;
+            l.Y += dy;
+            if (l.X < 0)
+            {
+                l.X = 0;
+            }
+            if (l.Y < 0)
+                l.Y = 0;
+            Location = l;
+            if (FigureMoved != null)
+                FigureMoved(this, new LocationEventsArgs(Location.X, Location.Y));
+        }
         public override void Draw(Drawing.DrawingContext dc)
         {
             try
@@ -84,6 +98,14 @@ namespace Seal2D.Core.Figures
                 dc.D2DTarget.Transform = SharpDX.Matrix.Identity;
             }
         }
+        public virtual void OnFigureMove(object sender, LocationEventsArgs e)
+        {
+            if (FigureMoved != null)
+            {
+                FigureMoved(sender, e);
+            }
+        }
+        public event EventHandler<LocationEventsArgs> FigureMoved;
         
     }
 }

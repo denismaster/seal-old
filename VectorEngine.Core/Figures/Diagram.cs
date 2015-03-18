@@ -7,14 +7,20 @@ namespace Seal2D.Core.Figures
     public abstract class Diagram
     {
         public abstract void Add(Figure f);
-        public abstract void Add(Line l);
+        public abstract void Add(LineBase l);
         public abstract Figure FindFigureByPoint(Point p);
-        public ICollection<Line> Lines
+        
+        public ICollection<LineBase> Lines
         {
             get;
             set;
         }
         public ICollection<Figure> Figures
+        {
+            get;
+            set;
+        }
+        public ICollection<Group> Groups
         {
             get;
             set;

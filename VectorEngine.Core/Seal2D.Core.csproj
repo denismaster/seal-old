@@ -55,7 +55,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Figures\ExtendedSolidFigure.cs" />
+    <Compile Include="Animation.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Figures\ArrowedLine.cs" />
+    <Compile Include="Figures\BezierCurve.cs" />
+    <Compile Include="Figures\ControlMarker.cs" />
+    <Compile Include="Figures\Curve.cs" />
+    <Compile Include="Figures\EndLineMarker.cs" />
+    <Compile Include="Figures\SolidExtend.cs" />
     <Compile Include="Figures\Diagram.cs" />
     <Compile Include="Figures\FigureBase.cs" />
     <Compile Include="Figures\GeometryFigure.cs" />
@@ -71,10 +78,15 @@
     <Compile Include="Figures\VectorObject.cs" />
     <Compile Include="Figures\ImageFigure.cs" />
     <Compile Include="Figures\Line.cs" />
-    <Compile Include="Figures\Group.cs" />
+    <Compile Include="Figures\GroupFigure.cs" />
     <Compile Include="ObjectFactory.cs" />
+    <Compile Include="Figures\PolyCurve.cs" />
+    <Compile Include="Figures\PolyLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Figures\SolidFigure.cs" />
+    <Compile Include="Figures\SimpleLine.cs" />
+    <Compile Include="Figures\StrokeFigure.cs" />
+    <Compile Include="Figures\WaveCurve.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IO\" />

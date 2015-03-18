@@ -8,7 +8,7 @@ using SharpDX;
 using SharpDX.DirectWrite;
 namespace Seal2D.Control
 {
-    public class D2DCanvas : D2DLayer
+    public abstract class D2DCanvas : D2DLayer
     {
         public D2DCanvas()
         {
