@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Seal2D.Core
+namespace Seal2D.Core.Figures.Contexts
 {
-    public class Animation : Seal2D.Core.Figures.VectorObject
+    public class ColorContext
     {
     }
 }

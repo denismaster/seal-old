@@ -44,13 +44,20 @@ namespace Seal2D.Control.Controllers
                 }
             }
         }
-
+        private Figure FindFigureByPoint(Point p)
+        {
+            foreach(var m in _markers)
+            {
+                if (m.IsPointInside(p)) return m;
+            }
+            return this.Diagram.FindFigureByPoint(p);
+        }
         public override void MouseDownAction(System.Windows.Forms.MouseEventArgs e)
         {
-            draggedFigure = this.Diagram.FindFigureByPoint(new SharpDX.Point(e.Location.X, e.Location.Y));
+            draggedFigure = FindFigureByPoint(new SharpDX.Point(e.Location.X, e.Location.Y));
             if (!(draggedFigure is Marker))
             {
-                //draggedFigure = ObjectManager.Extend(draggedFigure);
+                draggedFigure = this.Diagram.Extend(draggedFigure);
                 this.Diagram.SelectedFigure = draggedFigure;
             }
             CreateMarkers();
@@ -83,7 +90,7 @@ namespace Seal2D.Control.Controllers
             }
             else
             {
-                var figure = this.Diagram.FindFigureByPoint(mouseLocation);
+                var figure = FindFigureByPoint(mouseLocation);
                 if (figure is Marker)
                     this.ActiveCursor = System.Windows.Forms.Cursors.SizeAll;
                 else
@@ -104,7 +111,6 @@ namespace Seal2D.Control.Controllers
                 selectionRect.Height = 0;
                 isRect = false;
             }
-            //Invalidate();
         }
         private GroupFigure FindGroupByRect(RectangleF r)
         {
@@ -116,7 +122,6 @@ namespace Seal2D.Control.Controllers
                     g.Add(f as Figure);
                 }
             }
-            // Diagram.Groups.Add(g);
             Diagram.SelectedFigure = g;
             return g;
         }

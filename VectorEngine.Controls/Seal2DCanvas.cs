@@ -65,16 +65,7 @@ namespace Seal2D.Control
             }
             if (Diagram.SelectedFigure is Group)
             {
-                var q = Diagram.SelectedFigure as GroupFigure;
-                foreach (var d in q.Childs)
-                {
-                    IBoundable r = d as IBoundable;
-
-                    if (r != null)
-                    {
-                        DrawSelectionRect(r);
-                    }
-                }
+                DrawSelectionRect(Diagram.SelectedFigure as Group);
             }
             else
             {
@@ -84,10 +75,19 @@ namespace Seal2D.Control
                     DrawSelectionRect(r);
                 }
             }
-            
             _controller.RenderAction(Context);
         }
-
+        private void DrawSelectionRect(Group g)
+        {
+            foreach (var d in g.Childs)
+            {
+                IBoundable r = d as IBoundable;
+                if (r != null)
+                {
+                    DrawSelectionRect(r);
+                }
+            }
+        }
         private void DrawSelectionRect(IBoundable r)
         {
             var g = Context.D2DTarget;
@@ -103,7 +103,6 @@ namespace Seal2D.Control
         }
         protected override void OnMouseDown(MouseEventArgs e)
         {
-
             _controller.MouseDownAction(e);
             this.Invalidate();
         }

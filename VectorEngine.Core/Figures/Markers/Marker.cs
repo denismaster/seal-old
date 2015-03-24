@@ -45,7 +45,7 @@ namespace Seal2D.Core.Figures
             }
         }
 
-        protected static  int defaultSize = 2;
+        protected static  int defaultSize = 4;
 
         public Figure targetFigure;
 
@@ -60,11 +60,10 @@ namespace Seal2D.Core.Figures
 
         public override void Draw(Drawing.DrawingContext g)
         {
-            g.D2DTarget.Transform = Matrix.Translation(Location.X, Location.Y, 0);
-            RectangleF rect = new RectangleF(0, 0, defaultSize, defaultSize);
-            g.D2DTarget.FillRectangle(rect, g.SolidBrush);
-            g.D2DTarget.DrawRectangle(rect, g.SolidBrush, 1);
             g.D2DTarget.Transform = Matrix.Identity;
+            RectangleF rect = new RectangleF(Location.X, Location.Y, defaultSize,defaultSize);
+            g.D2DTarget.FillRectangle(rect, g.MarkerBrush);
+            g.D2DTarget.DrawRectangle(rect, g.StrokeBrush, 0.5f);
         }
 
         public abstract void UpdateLocation();

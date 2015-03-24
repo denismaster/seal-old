@@ -55,7 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animation.cs" />
+    <Compile Include="Animations\Animation.cs" />
+    <Compile Include="Animations\MoveAnimation.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Figures\ArrowedLine.cs" />
     <Compile Include="Figures\BezierCurve.cs" />

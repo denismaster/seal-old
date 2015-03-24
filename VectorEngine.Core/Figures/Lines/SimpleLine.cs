@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Seal2D.Core
+namespace Seal2D.Core.Figures
 {
     public class Line : Seal2D.Core.Figures.LineBase
     {
@@ -14,7 +14,7 @@ namespace Seal2D.Core
 
         public override void Draw(Drawing.DrawingContext dc)
         {
-            throw new NotImplementedException();
+            dc.D2DTarget.DrawLine(this.From.LineEnd, this.To.LineEnd, dc.StrokeBrush);
         }
     }
 }

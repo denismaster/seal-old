@@ -8,7 +8,7 @@ using Seal2D.Core.Figures;
 using Seal2D.Control;
 namespace Seal2D.Control.Controllers
 {
-    public  class Controller
+    public  abstract class Controller
     {
         public Controller(Diagram d)
         {

@@ -30,7 +30,7 @@ namespace Seal2D.Core.Figures
             get;
             set;
         }
-        
+        public abstract Figure Extend(Figure f);
     }
 
 }

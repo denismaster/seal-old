@@ -36,5 +36,11 @@ namespace Seal2D.Core.Figures
             }
             return null;
         }
+        public override Figure Extend(Figure f)
+        {
+            if (f is SolidFigure)
+                f = new SolidExtend(f as SolidFigure);
+            return f;
+        }
     }
 }

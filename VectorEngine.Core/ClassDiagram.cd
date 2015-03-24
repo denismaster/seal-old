@@ -3,7 +3,7 @@
   <Class Name="Seal2D.Core.Drawing.DrawingContext" Collapsed="true">
     <Position X="31.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAQAAABAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Drawing\DrawingContext.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -51,8 +51,20 @@
       <FileName>Figures\Marker.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Seal2D.Core.Figures.SolidFigure" Collapsed="true">
-    <Position X="17.5" Y="3.25" Width="1.5" />
+  <Class Name="Seal2D.Core.Figures.SolidFigure">
+    <Position X="17.75" Y="4" Width="1.5" />
+    <InheritanceLine Type="Seal2D.Core.Figures.Figure" ManuallyRouted="true">
+      <Path>
+        <Point X="17.25" Y="2.441" />
+        <Point X="17.25" Y="2.653" />
+        <Point X="17.787" Y="2.653" />
+        <Point X="17.787" Y="3.083" />
+        <Point X="19.131" Y="3.083" />
+        <Point X="19.131" Y="3.698" />
+        <Point X="18.5" Y="3.698" />
+        <Point X="18.5" Y="4" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>gAAgAAAAABAAAgAAAAIBAgAAAAAIAAAAACAAgAAAggA=</HashCode>
       <FileName>Figures\SolidFigure.cs</FileName>
@@ -74,8 +86,8 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Seal2D.Core.Figures.SolidExtend" Collapsed="true">
-    <Position X="17.5" Y="4.75" Width="1.5" />
+  <Class Name="Seal2D.Core.Figures.SolidExtend">
+    <Position X="15.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAABAAgAAAAAIABgAAAAAAEAAAAAgAAAAAggA=</HashCode>
       <FileName>Figures\SolidExtend.cs</FileName>
@@ -89,14 +101,14 @@
       <FileName>ObjectFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Seal2D.Core.Line" Collapsed="true">
+  <Class Name="Seal2D.Core.Figures.Line" Collapsed="true">
     <Position X="21" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\SimpleLine.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Seal2D.Core.ArrowedLine" Collapsed="true">
+  <Class Name="Seal2D.Core.Figures.ArrowedLine" Collapsed="true">
     <Position X="22" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -138,7 +150,7 @@
       <FileName>Figures\BezierCurve.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Seal2D.Core.PolyLine" Collapsed="true">
+  <Class Name="Seal2D.Core.Figures.PolyLine" Collapsed="true">
     <Position X="19.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -169,7 +181,7 @@
   <Class Name="Seal2D.Core.StrokeFigure" Collapsed="true">
     <Position X="10.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAABAAAgAAAAAAAAAAAAAAIACAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\StrokeFigure.cs</FileName>
     </TypeIdentifier>
   </Class>

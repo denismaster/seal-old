@@ -8,7 +8,18 @@ namespace Seal2D.Core
 {
     public class StrokeFigure : Seal2D.Core.Figures.Figure
     {
-        public Geometry Path;
+        private ICollection<Vector2> points;
+        private Color color = Color.Blue;
+        private float lineWidth = 4;
+        public StrokeFigure(ICollection<Vector2> ps)
+        {
+            if(ps==null)
+            {
+                throw new ArgumentNullException();
+            }
+            points = ps;
+        }
+
         public override bool IsPointInside(SharpDX.Point p)
         {
             return false;
@@ -17,7 +28,17 @@ namespace Seal2D.Core
         public override void Draw(Drawing.DrawingContext dc)
         {
             var g = dc.D2DTarget;
-            g.DrawGeometry(Path, dc.SolidBrush);
+            var start = points.First();
+            foreach(var p in points)
+            {
+                if (p == start) continue;
+                else
+                {
+                    dc.SolidBrush.Color=color;
+                    dc.D2DTarget.DrawLine(start, p, dc.SolidBrush, lineWidth);
+                    start = p;
+                }
+            }
 
         }
     }

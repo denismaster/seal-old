@@ -12,6 +12,7 @@ namespace Seal2D.Core.Drawing
             this.D2DTarget = g;
             StrokeBrush = new D2D.SolidColorBrush(g, Color.Black);
             SolidBrush = new D2D.SolidColorBrush(g, Color.White);
+            MarkerBrush = new D2D.SolidColorBrush(g, Color.Red);
         }
         public D2D.RenderTarget D2DTarget
         {
@@ -29,5 +30,6 @@ namespace Seal2D.Core.Drawing
             get;
             set;
         }
+        public D2D.SolidColorBrush MarkerBrush;
     }
 }

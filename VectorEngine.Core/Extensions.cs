@@ -4,15 +4,22 @@ namespace Seal2D.Core.Figures
 {
     public static class Extensions
     {
+        #region RectangleF methods
+
         public static RectangleF Absolute(this RectangleF r)
         {
-            var width = r.Width;
-            var height = r.Height;
-            if (width > 0 && height > 0) return r;
-            if (width < 0 && height < 0) return new RectangleF(r.X+width,r.Y+height, -width, -height);
-            if (width < 0) return new RectangleF(r.X + width, r.Y, -width, height);
-            if (height < 0) return new RectangleF(r.X, r.Y + height, width, -height);
-            else return r;
+            if (r.Width < 0)
+            {
+                r.Width = -r.Width;
+                r.X -= r.Width;
+            }
+            if (r.Height < 0)
+            {
+                r.Height = -r.Height;
+                r.Y -= r.Height;
+            }
+            return r;
         }
+        #endregion
     }
 }

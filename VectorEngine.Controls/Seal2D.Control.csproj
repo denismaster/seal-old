@@ -57,6 +57,7 @@
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\EmptyController.cs" />
     <Compile Include="Controllers\SelectionController.cs" />
+    <Compile Include="Controllers\StrokeController.cs" />
     <Compile Include="D2DCanvas.cs">
       <SubType>Component</SubType>
     </Compile>
