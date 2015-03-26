@@ -66,7 +66,7 @@ namespace Seal2D.Core.Figures
             else
                 return false;
         }
-        public void Offset(int dx, int dy)
+        public virtual void Offset(int dx, int dy)
         {
             var l = Location;
             l.X += dx;

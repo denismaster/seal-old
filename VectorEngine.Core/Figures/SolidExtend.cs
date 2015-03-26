@@ -66,7 +66,7 @@ namespace Seal2D.Core.Figures
         {
             return _figure.IsPointInside(p);
         }
-        public void Offset(int dx, int dy)
+        public override void Offset(int dx, int dy)
         {
             _figure.Offset(dx, dy);
         }

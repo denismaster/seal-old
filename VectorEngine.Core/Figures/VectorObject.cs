@@ -10,7 +10,7 @@ namespace Seal2D.Core.Figures
     public abstract class VectorObject
     {
         string _name = String.Empty;
-        String Name
+        public String Name
         {
             get
             {
