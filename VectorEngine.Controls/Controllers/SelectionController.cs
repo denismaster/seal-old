@@ -131,11 +131,13 @@ namespace Seal2D.Control.Controllers
             {
                 m.Draw(dc);
             }
+            
             if (isRect)
             {
                 dc.SolidBrush.Color = Color.DeepSkyBlue;
                 dc.D2DTarget.DrawRectangle(selectionRect, dc.SolidBrush, 2);
             }
+            
         }
     }
 }

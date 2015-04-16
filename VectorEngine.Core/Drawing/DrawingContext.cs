@@ -7,6 +7,15 @@ namespace Seal2D.Core.Drawing
 {
     public class DrawingContext
     {
+        public void DrawRectangle(RectangleF rect, Vector2 where)
+        {
+            D2DTarget.FillRectangle(rect, SolidBrush);
+            D2DTarget.DrawRectangle(rect, StrokeBrush);
+        }
+        public void DrawLine(Vector2 from, Vector2 to)
+        {
+            D2DTarget.DrawLine(from, to, StrokeBrush);
+        }
         public DrawingContext(D2D.RenderTarget g)
         {
             this.D2DTarget = g;

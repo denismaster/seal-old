@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using SharpDX.Direct2D1;
 using SharpDX;
+using Seal2D.Core;
 namespace Seal2D.Core.Figures
 {
     public class LocationEventsArgs : EventArgs
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public LocationEventsArgs(int X, int Y)
+        public float X { get; set; }
+        public float Y { get; set; }
+        public LocationEventsArgs(float X, float Y)
         {
             this.X = X;
             this.Y = Y;
@@ -19,15 +20,15 @@ namespace Seal2D.Core.Figures
     }
     public interface IMoveable
     {
-        Point Location
+        Location Location
         {
             get;
             set;
         }
-        void Offset(int dx, int dy);
+        void Offset(float dx, float dy);
 
-        //event EventHandler<LocationEventsArgs> FigureMoved;
+        event EventHandler<LocationEventsArgs> FigureMoved;
 
-        //void OnFigureMove(object sender, LocationEventsArgs e);
+        void OnFigureMove(object sender, LocationEventsArgs e);
     }
 }

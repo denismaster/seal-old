@@ -31,22 +31,17 @@ namespace Seal2D.Core.Figures
         {
             //nothing to do, childs draw manually.
         }
-         public void Offset(int dx, int dy)
+        public void Offset(float dx, float dy)
         {
             foreach (var f in Childs.OfType<IMoveable>())
                 f.Offset(dx, dy);
-            if (FigureMoved != null)
-            {
-                FigureMoved(null, new LocationEventsArgs(Location.X, Location.Y));
-            }
 
         }
-         public SharpDX.Point Location
-         {
-             get;
-             set;
-
-         }
+        public Location Location
+        {
+            get;
+            set;
+        }
         public event EventHandler<LocationEventsArgs> FigureMoved;
 
         public virtual void OnFigureMove(object sender, LocationEventsArgs e)

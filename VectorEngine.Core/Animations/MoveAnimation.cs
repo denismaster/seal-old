@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using Seal2D.Core.Figures;
 namespace Seal2D.Core.Animations
 {
@@ -30,14 +31,20 @@ namespace Seal2D.Core.Animations
             if (m != null)
             {
                 var vector = new SharpDX.Vector2(m.Location.X - X, m.Location.Y - Y);
+                var length = vector.Length();
                 vector.Normalize();
-                int dx, dy;
-                dx = Convert.ToInt32(Math.Round(vector.X));
-                dy = Convert.ToInt32(Math.Round(vector.Y));
-                Thread moveTask = new Thread(() =>
+                float dx, dy;
+                dx = vector.X;
+                dy = vector.Y;
+                Task moveTask = new Task(() =>
                 {
-                    for (int i = 0; i < 100;i++ )
-                        m.Offset(dx, dy);
+                    var i = 0.0f;
+                    while (length>=i)
+                    {
+                        m.Offset(-dx, -dy);
+                        Thread.Sleep(1);
+                        i+=1;
+                    }
                 });
                 moveTask.Start();
             }

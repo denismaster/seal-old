@@ -38,8 +38,14 @@
     <Reference Include="SharpDX">
       <HintPath>$(SharpDXPackageBinDir)\SharpDX.dll</HintPath>
     </Reference>
+    <Reference Include="SharpDX.D3DCompiler">
+      <HintPath>$(SharpDXPackageBinDir)\SharpDX.D3DCompiler.dll</HintPath>
+    </Reference>
     <Reference Include="SharpDX.Direct2D1">
       <HintPath>$(SharpDXPackageBinDir)\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D10">
+      <HintPath>$(SharpDXPackageBinDir)\SharpDX.Direct3D10.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.DXGI">
       <HintPath>$(SharpDXPackageBinDir)\SharpDX.DXGI.dll</HintPath>
@@ -57,6 +63,9 @@
   <ItemGroup>
     <Compile Include="Animations\Animation.cs" />
     <Compile Include="Animations\MoveAnimation.cs" />
+    <Compile Include="Base\Location.cs" />
+    <Compile Include="DeviceManager.cs" />
+    <Compile Include="Drawing\DrawingManager.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Figures\Contexts\ColorContext.cs" />
     <Compile Include="Figures\Curves\BezierCurve.cs" />
@@ -77,22 +86,27 @@
     <Compile Include="Figures\Markers\ControlMarker.cs" />
     <Compile Include="Figures\Markers\EndLineMarker.cs" />
     <Compile Include="Figures\Markers\Marker.cs" />
+    <Compile Include="Figures\Polygon.cs" />
     <Compile Include="Figures\SolidExtend.cs" />
     <Compile Include="Figures\Diagram.cs" />
     <Compile Include="Figures\FigureBase.cs" />
     <Compile Include="Figures\GeometryFigure.cs" />
     <Compile Include="Figures\ObjectDiagram.cs" />
+    <Compile Include="Figures\SolidFigure2.cs" />
     <Compile Include="Figures\VectorObject.cs" />
     <Compile Include="Figures\ImageFigure.cs" />
     <Compile Include="Figures\GroupFigure.cs" />
+    <Compile Include="Geometries\IGeometry.cs" />
+    <Compile Include="Geometries\RectangleGeometry.cs" />
+    <Compile Include="IO\IDiagramSerializer.cs" />
+    <Compile Include="IO\JsonDiagramSerializer.cs" />
+    <Compile Include="IO\XmlDiagramSerializer.cs" />
     <Compile Include="ObjectFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Figures\SolidFigure.cs" />
     <Compile Include="Figures\StrokeFigure.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="Drawing\DrawingContext.cs" />
     <None Include="ClassDiagram.cd" />

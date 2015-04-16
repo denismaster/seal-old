@@ -1,0 +1,9 @@
+C:\Users\Денис\Documents\Seal2D\Seal.Win\bin\Release\Seal.Win.exe.config
+C:\Users\Денис\Documents\Seal2D\Seal.Win\bin\Release\Seal.Win.exe
+C:\Users\Денис\Documents\Seal2D\Seal.Win\bin\Release\Seal.Win.pdb
+C:\Users\Денис\Documents\Seal2D\Seal.Win\obj\Release\Seal.Win.csprojResolveAssemblyReference.cache
+C:\Users\Денис\Documents\Seal2D\Seal.Win\obj\Release\Seal.Win.Form1.resources
+C:\Users\Денис\Documents\Seal2D\Seal.Win\obj\Release\Seal.Win.Properties.Resources.resources
+C:\Users\Денис\Documents\Seal2D\Seal.Win\obj\Release\Seal.Win.csproj.GenerateResource.Cache
+C:\Users\Денис\Documents\Seal2D\Seal.Win\obj\Release\Seal.Win.exe
+C:\Users\Денис\Documents\Seal2D\Seal.Win\obj\Release\Seal.Win.pdb

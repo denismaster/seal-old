@@ -1,0 +1,17 @@
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\Seal2D.Core.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\Seal2D.Core.pdb
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\Newtonsoft.Json.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.D3DCompiler.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.Direct2D1.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.Direct3D10.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.DXGI.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\Newtonsoft.Json.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.D3DCompiler.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.Direct2D1.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.Direct3D10.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\bin\Release\SharpDX.DXGI.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\obj\Release\Seal2D.Core.csprojResolveAssemblyReference.cache
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\obj\Release\Seal2D.Core.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Core\obj\Release\Seal2D.Core.pdb

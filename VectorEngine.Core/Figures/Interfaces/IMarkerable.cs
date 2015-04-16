@@ -3,6 +3,6 @@ namespace Seal2D.Core.Figures
 {
     public interface IMarkerable
     {
-        System.Collections.Generic.ICollection<Marker> CreateMarkers();
+        System.Collections.Generic.LinkedList<Marker> CreateMarkers();
     }
 }

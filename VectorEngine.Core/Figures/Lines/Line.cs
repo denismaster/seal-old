@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 namespace Seal2D.Core.Figures
 {
-    public abstract class LineBase : Figure
+    public abstract class LineBase : Figure, IMarkerable
     {
         public ILineEndable From
         {
@@ -17,5 +17,6 @@ namespace Seal2D.Core.Figures
             get;
             set;
         }
+        public abstract LinkedList<Marker> CreateMarkers();
     }
 }

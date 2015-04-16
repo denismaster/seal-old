@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Seal2D.Core
 {
-    public class PolyCurve : Curve
+    public abstract class PolyCurve : Curve
     {
     }
 }

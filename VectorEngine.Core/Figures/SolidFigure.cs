@@ -1,18 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 using Seal2D.Core.Figures;
 using SharpDX;
 
 namespace Seal2D.Core.Figures
 {
+    [Serializable]
     public abstract class SolidFigure : Figure, ILineEndable, IBoundable, IColorable, IMoveable
     {
+        [XmlIgnore]
+        [JsonIgnore]
         public const int defaultSize = 25;
         private SharpDX.Color4 _brushColor = SharpDX.Color.White;
-        private SharpDX.Point _location;
-
+        private Location _location;
+        [XmlIgnore]
+        [JsonIgnore]
         public virtual SharpDX.Direct2D1.Geometry Geometry
         {
             get;
@@ -29,7 +32,8 @@ namespace Seal2D.Core.Figures
                 _brushColor = value;
             }
         }
-        public virtual SharpDX.Point Location
+        [JsonProperty(TypeNameHandling=TypeNameHandling.None)]
+        public virtual Location Location
         {
             get
             {
@@ -40,6 +44,8 @@ namespace Seal2D.Core.Figures
                 _location = value;
             }
         }
+        [XmlIgnore]
+        [JsonIgnore]
         public virtual SharpDX.Vector2 LineEnd
         {
             get
@@ -50,6 +56,8 @@ namespace Seal2D.Core.Figures
                 return v;
             }
         }
+        [XmlIgnore]
+        [JsonIgnore]
         public virtual SharpDX.RectangleF Bounds
         {
             get
@@ -60,33 +68,25 @@ namespace Seal2D.Core.Figures
         }
         public override bool IsPointInside(Point p)
         {
-            Point here = new Point(p.X - Location.X, p.Y - Location.Y);
+            var dx = Convert.ToInt32(Math.Round(Location.X));
+            var dy = Convert.ToInt32(Math.Round(Location.Y));
+            Point here = new Point(p.X - dx, p.Y - dy);
             if (Geometry != null)
                 return Geometry.StrokeContainsPoint(here, 1) || Geometry.FillContainsPoint(here);
             else
                 return false;
         }
-        public virtual void Offset(int dx, int dy)
+        public virtual void Offset(float dx, float dy)
         {
-            var l = Location;
-            l.X += dx;
-            l.Y += dy;
-            if (l.X < 0)
-            {
-                l.X = 0;
-            }
-            if (l.Y < 0)
-                l.Y = 0;
-            Location = l;
-            if (FigureMoved != null)
+            _location.X += dx;
+            _location.Y += dy;
                 FigureMoved(this, new LocationEventsArgs(Location.X, Location.Y));
         }
         public override void Draw(Drawing.DrawingContext dc)
         {
             try
             {
-                dc.D2DTarget.Transform = Matrix.AffineTransformation2D(1.0f, MathUtil.DegreesToRadians(0), new Vector2
-                    (this.Location.X, this.Location.Y));
+                dc.D2DTarget.Transform = Matrix.Translation(this._location.X, this._location.Y, 0);
                 dc.SolidBrush.Color = this.Color;
                 dc.D2DTarget.FillGeometry(this.Geometry, dc.SolidBrush);
                 dc.D2DTarget.DrawGeometry(this.Geometry, dc.StrokeBrush, 1);
@@ -100,12 +100,9 @@ namespace Seal2D.Core.Figures
         }
         public virtual void OnFigureMove(object sender, LocationEventsArgs e)
         {
-            if (FigureMoved != null)
-            {
                 FigureMoved(sender, e);
-            }
         }
-        public event EventHandler<LocationEventsArgs> FigureMoved;
+        public event EventHandler<LocationEventsArgs> FigureMoved = (s,e) => { };
         
     }
 }

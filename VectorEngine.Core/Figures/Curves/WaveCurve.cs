@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Seal2D.Core
 {
-    public class WaveCurve : Curve
+    public abstract class  WaveCurve : Curve
     {
     }
 }

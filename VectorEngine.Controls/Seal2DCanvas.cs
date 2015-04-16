@@ -13,12 +13,25 @@ namespace Seal2D.Control
     public class Seal2DCanvas : D2DCanvas
     {
         //protected Figure draggedFigure;
+        private Diagram _diagram;
         public Diagram Diagram
         {
-            get;
-            set;
+            get
+            {
+                return _diagram;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    _diagram = value;
+                    if(ModeController!=null)
+                    ModeController.Diagram = _diagram;
+                }
+            }
+
         }
-        public DrawingContext Context
+        protected DrawingContext Context
         {
             get;
             set;
@@ -28,7 +41,7 @@ namespace Seal2D.Control
             get;
             set;
         }
-        public Controller ModeController
+        protected Controller ModeController
         {
             get
             {

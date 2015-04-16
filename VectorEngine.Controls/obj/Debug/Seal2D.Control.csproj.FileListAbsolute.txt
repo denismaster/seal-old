@@ -14,3 +14,21 @@ C:\Users\Денис\Documents\Visual Studio 2013\Projects\VectorEditor\VectorEng
 C:\Users\Денис\Documents\Visual Studio 2013\Projects\VectorEditor\VectorEngine.Controls\bin\Debug\LightInject.dll
 C:\Users\Денис\Documents\Visual Studio 2013\Projects\VectorEditor\VectorEngine.Controls\bin\Debug\LightInject.pdb
 C:\Users\Денис\Documents\Visual Studio 2013\Projects\VectorEditor\VectorEngine.Controls\bin\Debug\LightInject.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\Seal2D.Control.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\Seal2D.Control.pdb
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\Seal2D.Core.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\SharpDX.Direct2D1.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\SharpDX.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\SharpDX.DXGI.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\Seal2D.Core.pdb
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\SharpDX.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\SharpDX.Direct2D1.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\SharpDX.DXGI.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\obj\Debug\Seal2D.Control.csprojResolveAssemblyReference.cache
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\obj\Debug\Seal2D.Control.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\obj\Debug\Seal2D.Control.pdb
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\LightInject.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\LightInject.pdb
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\LightInject.xml
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Денис\Documents\Seal2D\VectorEngine.Controls\bin\Debug\Newtonsoft.Json.xml

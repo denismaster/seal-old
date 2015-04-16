@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using SharpDX;
 namespace Seal2D.Core.Figures
 {
-    public abstract class Marker : Seal2D.Core.Figures.Figure, IMoveable
+    public abstract class Marker : Seal2D.Core.Figures.Figure, IMoveable, ILineEndable
     {
         public Marker()
         {
         }
-        private Point _location;
-        public Point Location
+        private Location _location;
+        public Location Location
         {
             get
             {
@@ -23,7 +23,14 @@ namespace Seal2D.Core.Figures
                 _location = value;
             }
         }
-        public virtual void Offset(int dx, int dy)
+        public Vector2 LineEnd
+        {
+            get
+            {
+                return _location;
+            }
+        }
+        public virtual void Offset(float dx, float dy)
         {
             _location.X += dx;
             _location.Y += dy;
@@ -73,10 +80,10 @@ namespace Seal2D.Core.Figures
         public override void UpdateLocation()
         {
             RectangleF bounds = (targetFigure as IBoundable).Bounds;
-            Location = new Point((int)Math.Round(bounds.Right) + defaultSize / 2, (int)Math.Round(bounds.Bottom) + defaultSize / 2);
+            Location = new Location((int)Math.Round(bounds.Right) + defaultSize / 2, (int)Math.Round(bounds.Bottom) + defaultSize / 2);
         }
 
-        public override void Offset(int dx, int dy)
+        public override void Offset(float dx, float dy)
         {
             base.Offset(dx, dy);
             (targetFigure as IScaleable).Size = new Size2F((targetFigure as IScaleable).Size.Width + dx,

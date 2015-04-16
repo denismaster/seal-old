@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Seal2D.Core
 {
-    public class BezierCurve : Curve
+    public abstract class BezierCurve : Curve
     {
     }
 }

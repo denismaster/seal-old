@@ -1,0 +1,220 @@
+﻿<Window x:Name="_this" x:Class="Seal.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:seal="clr-namespace:Seal2D.Control;assembly=Seal2D.Control"
+        Title="Seal2D"  RenderOptions.EdgeMode="Aliased" Height="350" Width="525" Background="#FFCFCFCF" Loaded="Window_Loaded" ScrollViewer.CanContentScroll="True" WindowState="Maximized" Icon="Images/app_icon.png">
+    <Window.Resources>
+        <!-- style for a toolbar container -->
+        <Style x:Key="AeroToolbar" TargetType="{x:Type ToolBar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToolBar">
+                        <Border SnapsToDevicePixels="True" BorderBrush="#A0AFC3"  BorderThickness="0,0,0,1">
+                            <StackPanel Orientation="Horizontal" IsItemsHost="True">
+                                <StackPanel.Background>
+                                    <SolidColorBrush Color="White"></SolidColorBrush>
+                                </StackPanel.Background>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- remove the focus rectangle from a selected object -->
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="AeroMenu" TargetType="{x:Type Menu}">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style x:Key="AeroMenuButton" TargetType="{x:Type MenuItem}">
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Grid Background="White">
+                            <ContentPresenter Content="{TemplateBinding Header}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+         <!--style a button for the toolbar--> 
+        <Style  x:Key="AeroToolbarButton"  TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="2" Name="myGrid">
+                            <Border Name="Border2" SnapsToDevicePixels="True" BorderBrush="#FFCFCFCF" BorderThickness="0">
+                                <Border Name="Border1" SnapsToDevicePixels="True" CornerRadius="2" Padding="6,0,6,0"  BorderBrush="{x:Null}" BorderThickness="0">
+                                    <ContentPresenter VerticalAlignment="Center" />
+                                </Border>
+                            </Border>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="myGrid" Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="White"></SolidColorBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="Border1" Property="BorderThickness" Value="1" />
+                                <Setter TargetName="Border2" Property="BorderThickness" Value="1" />
+                                <Setter TargetName="Border1" Property="Padding" Value="4,0,4,0" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="myGrid" Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="Gainsboro"></SolidColorBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="Border2" Property="BorderThickness" Value="0" />
+                                <Setter TargetName="Border1" Property="BorderThickness" Value="1" />
+                                <Setter TargetName="Border1" Property="BorderBrush" Value="#BAC9DB" />
+                                <Setter TargetName="Border1" Property="Padding" Value="5,0,5,0" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="Border2" Property="BorderThickness" Value="1" />
+                                <Setter TargetName="Border1" Property="BorderThickness" Value="1" />
+                                <Setter TargetName="Border1" Property="Padding" Value="4,0,4,0" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="#A0AFC3" BorderThickness="1" >
+        <WindowsFormsHost Name="Host" Width="840" Height="480">
+            <seal:Seal2DCanvas DoubleClick="Seal2DCanvas_DoubleClick" MouseMove="Seal2DCanvas_MouseMove"></seal:Seal2DCanvas>
+        </WindowsFormsHost>
+        </Border>
+        <ToolBar Style="{StaticResource AeroToolbar}" Grid.ColumnSpan="3" 
+                 HorizontalAlignment="Stretch"  Grid.Row="0" 
+                 VerticalAlignment="Top" Height="30">
+            <Button Style="{StaticResource AeroToolbarButton}" >
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Файл" />
+                        <Polygon Margin="4,2,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Points="0,5 3,8 6,5" Fill="Black" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Separator Height="20"></Separator>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/undo.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/redo.png"></Image>
+                </Button.Content>
+            </Button>
+            <Separator Height="20"></Separator>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image  SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/cut.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image Width="16" Height="16" Source="Images/page_copy.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image Width="16"  SnapsToDevicePixels="true" Height="16" Source="Images/page_paste.png"></Image>
+                </Button.Content>
+            </Button>
+            <Separator Height="20"></Separator>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/draw_line.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/draw_wave.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image Width="16" Height="16" Source="Images/draw_ellipse.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/draw_polygon.png"></Image>
+                        <Polygon Margin="4,2,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Points="0,5 3,8 6,5" Fill="Black" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/draw_calligraphic.png"></Image>
+                </Button.Content>
+            </Button>
+            <Separator Height="20"></Separator>
+            
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/border_color.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/fill_color.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource AeroToolbarButton}">
+                <Button.Content>
+                    <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/smartart_change_color_gallery.png"></Image>
+                </Button.Content>
+            </Button>
+            <Menu Style="{StaticResource AeroMenu}" >
+                <MenuItem Header="Menu" Style="{StaticResource AeroMenuButton}">
+                    <MenuItem  Style ="{StaticResource AeroMenuButton}" Header="MenuItem1"/>
+                </MenuItem>
+            </Menu>
+        </ToolBar>
+        <StatusBar Grid.ColumnSpan="3" Grid.Row="4" HorizontalAlignment="Stretch" Height="25" VerticalAlignment="Bottom"  Background="White">
+            <TextBlock Text="{Binding ElementName=_this, Path=mouseX}"></TextBlock>
+            <TextBlock Text=","></TextBlock>
+            <TextBlock Text="{Binding ElementName=_this, Path=mouseY}"></TextBlock>
+            <TextBlock Text="пкс"></TextBlock>
+        </StatusBar>
+
+    </Grid>
+</Window>

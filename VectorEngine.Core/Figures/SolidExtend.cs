@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 using System.Collections.Generic;
 using SharpDX;
 using SharpDX.Direct2D1;
@@ -12,7 +13,7 @@ namespace Seal2D.Core.Figures
         {
             _figure = f;
         }
-
+        [XmlIgnore]
         public Figure Figure
         {
             get
@@ -51,7 +52,7 @@ namespace Seal2D.Core.Figures
                 return _figure.Bounds;
             }
         }
-        public override Point Location
+        public override Location Location
         {
             get
             {
@@ -66,11 +67,11 @@ namespace Seal2D.Core.Figures
         {
             return _figure.IsPointInside(p);
         }
-        public override void Offset(int dx, int dy)
+        public override void Offset(float dx, float dy)
         {
             _figure.Offset(dx, dy);
         }
-        public  ICollection<Marker> CreateMarkers()
+        public  LinkedList<Marker> CreateMarkers()
         {
             LinkedList<Marker> markers = new LinkedList<Marker>();
             Marker m = new SizeMarker();
@@ -91,13 +92,13 @@ namespace Seal2D.Core.Figures
             //}
             OnFigureMove(this, null);
         }
-        public virtual void OnFigureMove(object sender, LocationEventsArgs e)
+        public override void OnFigureMove(object sender, LocationEventsArgs e)
         {
             if (FigureMoved != null)
             {
                 FigureMoved(sender, e);
             }
         }
-        public event EventHandler<LocationEventsArgs> FigureMoved;
+        public new event EventHandler<LocationEventsArgs> FigureMoved;
     }
 }

@@ -10,7 +10,7 @@ namespace Seal2D.Core
     {
         private ICollection<Vector2> points;
         private Color color = Color.Blue;
-        private float lineWidth = 4;
+        private float lineWidth = 10;
         public StrokeFigure(ICollection<Vector2> ps)
         {
             if(ps==null)

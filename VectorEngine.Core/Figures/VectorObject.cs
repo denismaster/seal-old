@@ -9,7 +9,8 @@ namespace Seal2D.Core.Figures
     //Представляет возможность работы с объектами как с объектами VectorEditor
     public abstract class VectorObject
     {
-        string _name = String.Empty;
+        
+        private string _name = String.Empty;
         public String Name
         {
             get
