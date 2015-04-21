@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
     public abstract class Group : Figure
     {
@@ -18,11 +18,11 @@ namespace Seal2D.Core.Figures
         {
             Childs = new LinkedList<Figure>();
         }
-        public override bool IsPointInside(SharpDX.Point p)
+        public override bool IsPointInside(ref SharpDX.Point p)
         {
             foreach (var f in Childs)
             {
-                if (f.IsPointInside(p)) return true;
+                if (f.IsPointInside(ref p)) return true;
             }
             return false;
         }

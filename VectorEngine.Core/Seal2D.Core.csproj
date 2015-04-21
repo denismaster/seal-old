@@ -64,10 +64,14 @@
     <Compile Include="Animations\Animation.cs" />
     <Compile Include="Animations\MoveAnimation.cs" />
     <Compile Include="Base\Location.cs" />
+    <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\EmptyController.cs" />
+    <Compile Include="Controllers\MoveAnimationController.cs" />
+    <Compile Include="Controllers\SelectionController.cs" />
+    <Compile Include="Controllers\StrokeController.cs" />
     <Compile Include="DeviceManager.cs" />
     <Compile Include="Drawing\DrawingManager.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="Figures\Contexts\ColorContext.cs" />
     <Compile Include="Figures\Curves\BezierCurve.cs" />
     <Compile Include="Figures\Curves\Curve.cs" />
     <Compile Include="Figures\Curves\PolyCurve.cs" />
@@ -96,6 +100,7 @@
     <Compile Include="Figures\VectorObject.cs" />
     <Compile Include="Figures\ImageFigure.cs" />
     <Compile Include="Figures\GroupFigure.cs" />
+    <Compile Include="Geometries\EllipseGeometry.cs" />
     <Compile Include="Geometries\IGeometry.cs" />
     <Compile Include="Geometries\RectangleGeometry.cs" />
     <Compile Include="IO\IDiagramSerializer.cs" />

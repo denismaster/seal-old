@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
     public abstract class LineBase : Figure, IMarkerable
     {
@@ -18,5 +18,9 @@ namespace Seal2D.Core.Figures
             set;
         }
         public abstract LinkedList<Marker> CreateMarkers();
+    }
+    public interface IPointControllable
+    {
+        SharpDX.Vector2 GetPoint(int index);
     }
 }

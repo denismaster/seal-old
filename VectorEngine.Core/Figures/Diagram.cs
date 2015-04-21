@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 using Newtonsoft.Json;
 using SharpDX;
 using SharpDX.Direct2D1;
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
     [Serializable]
     public abstract class Diagram
@@ -13,18 +13,19 @@ namespace Seal2D.Core.Figures
         public abstract void Add(LineBase l);
         public abstract Figure Extend(Figure f);
         public abstract Figure FindFigureByPoint(Point p);
-        
-        public ICollection<LineBase> Lines
+        public abstract void BringToFront(Figure f);
+        public abstract void SendToBack(Figure f);
+        public LinkedList<LineBase> Lines
         {
             get;
             set;
         }
-        public ICollection<Figure> Figures
+        public LinkedList<Figure> Figures
         {
             get;
             set;
         }
-        public ICollection<Group> Groups
+        public LinkedList<Group> Groups
         {
             get;
             set;

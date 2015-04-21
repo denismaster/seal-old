@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
-using Seal2D.Core.Figures;
+using Seal.Figures;
 using SharpDX;
 
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
     [Serializable]
     public abstract class SolidFigure : Figure, ILineEndable, IBoundable, IColorable, IMoveable
@@ -66,10 +66,10 @@ namespace Seal2D.Core.Figures
                 return new RectangleF(bounds.Left + Location.X, bounds.Top + Location.Y, bounds.Width, bounds.Height);
             }
         }
-        public override bool IsPointInside(Point p)
+        public override bool IsPointInside(ref Point p)
         {
-            var dx = Convert.ToInt32(Math.Round(Location.X));
-            var dy = Convert.ToInt32(Math.Round(Location.Y));
+            var dx = Convert.ToInt32(System.Math.Round(Location.X));
+            var dy = Convert.ToInt32(System.Math.Round(Location.Y));
             Point here = new Point(p.X - dx, p.Y - dy);
             if (Geometry != null)
                 return Geometry.StrokeContainsPoint(here, 1) || Geometry.FillContainsPoint(here);

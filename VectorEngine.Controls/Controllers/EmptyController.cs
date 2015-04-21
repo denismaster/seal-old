@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seal2D.Core.Figures;
+using Seal.Figures;
 namespace Seal2D.Control.Controllers
 {
     public class EmptyController :Controller
     {
-        public EmptyController(Seal2D.Core.Figures.Diagram d )
+        public EmptyController(Seal.Figures.Diagram d )
             :base(d)
         {
 

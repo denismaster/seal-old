@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seal2D.Core;
-using Seal2D.Core.Figures;
+using Seal;
+using Seal.Figures;
 using Seal2D.Control;
 namespace Seal2D.Control.Controllers
 {
@@ -40,7 +40,7 @@ namespace Seal2D.Control.Controllers
         {
 
         }
-        public virtual void RenderAction(Seal2D.Core.Drawing.DrawingContext dc)
+        public virtual void RenderAction(Seal.Drawing.DrawingContext dc)
         {
 
         }

@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SharpDX;
 using Seal2D.Control;
-using Seal2D.Core;
-using Seal2D.Core.Figures;
+using Seal;
+using Seal.Figures;
 namespace Seal2D.Control.Controllers
 {
     public class SelectionController : Controller
@@ -48,7 +48,7 @@ namespace Seal2D.Control.Controllers
         {
             foreach(var m in _markers)
             {
-                if (m.IsPointInside(p)) return m;
+                if (m.IsPointInside(ref p)) return m;
             }
             return this.Diagram.FindFigureByPoint(p);
         }
@@ -125,7 +125,7 @@ namespace Seal2D.Control.Controllers
             Diagram.SelectedFigure = g;
             return g;
         }
-        public override void RenderAction(Core.Drawing.DrawingContext dc)
+        public override void RenderAction(Seal.Drawing.DrawingContext dc)
         {
             foreach(var m in _markers)
             {

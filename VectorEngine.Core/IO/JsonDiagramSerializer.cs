@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Seal2D.Core.Figures;
+using Seal.Figures;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-namespace Seal2D.Core.IO
+namespace Seal.IO
 {
     public class JsonDiagramSerializer : IDiagramSerializer
     {

@@ -10,7 +10,7 @@ using DXGI = SharpDX.DXGI;
 using D2D = SharpDX.Direct2D1;
 using DW = SharpDX.DirectWrite;
 using WIC = SharpDX.WIC;
-namespace Seal2D.Core
+namespace Seal
 {
     public interface IDeviceManager :IDisposable
     {

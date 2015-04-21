@@ -194,8 +194,8 @@ namespace Seal.Win
             get { return Color.FromArgb(255, 255, 255, 255); }
         }
         public override Color ToolStripBorder
-        { 
-            get { return Color.FromArgb(0, 255, 255, 255); }
+        {
+            get { return Color.FromArgb(0, 207, 207, 207); }
         }
         public override Color ToolStripDropDownBackground
         { 

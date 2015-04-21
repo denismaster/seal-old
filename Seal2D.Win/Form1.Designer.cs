@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Seal2D.Core.Figures.ObjectDiagram objectDiagram1 = new Seal2D.Core.Figures.ObjectDiagram();
+            Seal.Figures.ObjectDiagram objectDiagram1 = new Seal.Figures.ObjectDiagram();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.seal2DCanvas1 = new Seal2D.Control.Seal2DCanvas();
@@ -74,9 +74,9 @@
             // 
             // seal2DCanvas1
             // 
-            //objectDiagram1.Figures = ((System.Collections.Generic.ICollection<Seal2D.Core.Figures.Figure>)(resources.GetObject("objectDiagram1.Figures")));
-            //objectDiagram1.Groups = ((System.Collections.Generic.ICollection<Seal2D.Core.Figures.Group>)(resources.GetObject("objectDiagram1.Groups")));
-            //objectDiagram1.Lines = ((System.Collections.Generic.ICollection<Seal2D.Core.Figures.LineBase>)(resources.GetObject("objectDiagram1.Lines")));
+            //objectDiagram1.Figures = ((System.Collections.Generic.ICollection<Seal.Figures.Figure>)(resources.GetObject("objectDiagram1.Figures")));
+            //objectDiagram1.Groups = ((System.Collections.Generic.ICollection<Seal.Figures.Group>)(resources.GetObject("objectDiagram1.Groups")));
+            //objectDiagram1.Lines = ((System.Collections.Generic.ICollection<Seal.Figures.LineBase>)(resources.GetObject("objectDiagram1.Lines")));
             //objectDiagram1.SelectedFigure = null;
           //  this.seal2DCanvas1.Diagram = objectDiagram1;
             this.seal2DCanvas1.Location = new System.Drawing.Point(0, 24);

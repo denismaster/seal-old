@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using SharpDX;
 using SharpDX.Direct2D1;
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
     public class SolidExtend : SolidFigure, IMarkerable, IScaleable
     {
@@ -27,7 +27,7 @@ namespace Seal2D.Core.Figures
             set
             {
                 Size2F oldSize = new Size2F(_figure.Geometry.GetBounds().Width, _figure.Geometry.GetBounds().Height);
-                Size2F newSize = new Size2F(Math.Max(1, value.Width), Math.Max(1, value.Height));
+                Size2F newSize = new Size2F(System.Math.Max(1, value.Width), System.Math.Max(1, value.Height));
                 //коэффициент шкалировани по x
                 float kx;
                 float ky;
@@ -63,9 +63,9 @@ namespace Seal2D.Core.Figures
                 _figure.Location = value;
             }
         }
-        public override bool IsPointInside(Point p)
+        public override bool IsPointInside(ref Point p)
         {
-            return _figure.IsPointInside(p);
+            return _figure.IsPointInside(ref p);
         }
         public override void Offset(float dx, float dy)
         {

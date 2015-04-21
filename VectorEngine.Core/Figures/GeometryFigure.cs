@@ -1,6 +1,6 @@
 ﻿using SharpDX.Direct2D1;
 using SharpDX;
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
     public class GeometryFigure : SolidFigure
     {

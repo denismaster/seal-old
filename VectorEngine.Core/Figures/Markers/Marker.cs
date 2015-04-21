@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SharpDX;
-namespace Seal2D.Core.Figures
+using Math = System.Math;
+namespace Seal.Figures
 {
-    public abstract class Marker : Seal2D.Core.Figures.Figure, IMoveable, ILineEndable
+    public abstract class Marker : Seal.Figures.Figure, IMoveable, ILineEndable
     {
         public Marker()
         {
+            _drawingEllipse = new SharpDX.Direct2D1.Ellipse(Vector2.Zero, defaultSize + 1, defaultSize + 1);
         }
         private Location _location;
         public Location Location
@@ -56,7 +58,9 @@ namespace Seal2D.Core.Figures
 
         public Figure targetFigure;
 
-        public override bool IsPointInside(Point p)
+        private SharpDX.Direct2D1.Ellipse _drawingEllipse;
+
+        public override bool IsPointInside(ref Point p)
         {
             if (p.X < Location.X - defaultSize || p.X > Location.X + defaultSize)
                 return false;
@@ -68,9 +72,11 @@ namespace Seal2D.Core.Figures
         public override void Draw(Drawing.DrawingContext g)
         {
             g.D2DTarget.Transform = Matrix.Identity;
-            RectangleF rect = new RectangleF(Location.X, Location.Y, defaultSize,defaultSize);
-            g.D2DTarget.FillRectangle(rect, g.MarkerBrush);
-            g.D2DTarget.DrawRectangle(rect, g.StrokeBrush, 0.5f);
+            _drawingEllipse.Point = Location;
+            
+            g.D2DTarget.FillEllipse(_drawingEllipse, g.MarkerBrush);
+
+            g.D2DTarget.DrawEllipse(_drawingEllipse, g.StrokeBrush, 0.5f);
         }
 
         public abstract void UpdateLocation();
@@ -80,7 +86,7 @@ namespace Seal2D.Core.Figures
         public override void UpdateLocation()
         {
             RectangleF bounds = (targetFigure as IBoundable).Bounds;
-            Location = new Location((int)Math.Round(bounds.Right) + defaultSize / 2, (int)Math.Round(bounds.Bottom) + defaultSize / 2);
+            Location = new Location((int)System.Math.Round(bounds.Right) + defaultSize / 2, (int)System.Math.Round(bounds.Bottom) + defaultSize / 2);
         }
 
         public override void Offset(float dx, float dy)

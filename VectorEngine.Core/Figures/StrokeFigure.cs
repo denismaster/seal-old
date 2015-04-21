@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using SharpDX.Direct2D1;
 using SharpDX;
-namespace Seal2D.Core
+namespace Seal
 {
-    public class StrokeFigure : Seal2D.Core.Figures.Figure
+    public class StrokeFigure : Seal.Figures.Figure
     {
         private ICollection<Vector2> points;
         private Color color = Color.Blue;
@@ -20,7 +20,7 @@ namespace Seal2D.Core
             points = ps;
         }
 
-        public override bool IsPointInside(SharpDX.Point p)
+        public override bool IsPointInside(ref SharpDX.Point p)
         {
             return false;
         }

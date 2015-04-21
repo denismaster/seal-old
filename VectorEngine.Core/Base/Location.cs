@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Seal2D.Core
+namespace Seal
 {
     
     public struct Location
@@ -40,6 +40,10 @@ namespace Seal2D.Core
         public static implicit operator SharpDX.Vector2(Location d)
         {
             return new SharpDX.Vector2(d.X, d.Y);
+        }
+        public static explicit  operator Location(SharpDX.Vector2 d)
+        {
+            return new Location(d.X, d.Y);
         }
     }
 }

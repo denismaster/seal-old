@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Seal2D.Core;
-using Seal2D.Core.Figures;
-using Seal2D.Core.Drawing;
+using Seal;
+using Seal.Figures;
+using Seal.Drawing;
 using SharpDX.Direct2D1;
 using WeifenLuo.WinFormsUI.Docking;
 namespace Seal2D.Win

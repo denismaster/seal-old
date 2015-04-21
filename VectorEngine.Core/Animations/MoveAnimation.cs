@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Seal2D.Core.Figures;
-namespace Seal2D.Core.Animations
+using Seal.Figures;
+namespace Seal.Animations
 {
     public class MoveAnimation : Animation
     {

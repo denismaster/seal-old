@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SharpDX;
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
     public class ArrowedLine : Line
     {

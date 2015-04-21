@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Seal2D.Core.Figures;
-namespace Seal2D.Core.Animations
+using Seal.Figures;
+namespace Seal.Animations
 {
-    public abstract class Animation : Seal2D.Core.Figures.VectorObject
+    public abstract class Animation : Seal.Figures.VectorObject
     {
         public Animation(Figure f)
         {

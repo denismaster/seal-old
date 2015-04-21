@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SharpDX.Direct2D1;
 using SharpDX;
 
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
     public interface IBoundable
     {

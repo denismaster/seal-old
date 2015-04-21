@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seal2D.Core;
-using Seal2D.Core.Figures;
+using Seal;
+using Seal.Figures;
 using SharpDX;
 namespace Seal2D.Control.Controllers
 {

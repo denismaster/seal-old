@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Seal2D.Core
+namespace Seal
 {
-    public abstract class Curve : Seal2D.Core.Figures.LineBase
+    public abstract class Curve : Seal.Figures.LineBase
     {
-        public override bool IsPointInside(SharpDX.Point p)
+        public override bool IsPointInside(ref SharpDX.Point p)
         {
             throw new NotImplementedException();
         }

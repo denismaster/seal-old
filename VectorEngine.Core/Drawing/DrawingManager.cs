@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SharpDX;
 using D2D = SharpDX.Direct2D1;
-namespace Seal2D.Core
+namespace Seal
 {
     public interface IDrawingManager
     {
@@ -18,6 +18,7 @@ namespace Seal2D.Core
             get;
         }
         void Resize(Size2 s);
+        Drawing.DrawingContext GetContext();
         void OnRenderError(Exception s);
         void StartRendering();
     }

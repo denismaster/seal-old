@@ -1,6 +1,6 @@
 ﻿using System;
-using Seal2D.Core.Drawing;
-namespace Seal2D.Core.Geometries
+using Seal.Drawing;
+namespace Seal.Geometries
 {
     public interface IGeometry
     {

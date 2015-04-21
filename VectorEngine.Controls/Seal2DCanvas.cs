@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Seal2D.Core.Drawing;
-using Seal2D.Core.Figures;
+using Seal.Drawing;
+using Seal.Figures;
 using Seal2D.Control.Controllers;
 using SharpDX;
 namespace Seal2D.Control
@@ -36,7 +36,7 @@ namespace Seal2D.Control
             get;
             set;
         }
-        protected Seal2D.Core.ObjectFactory ObjectManager
+        protected Seal.ObjectFactory ObjectManager
         {
             get;
             set;
@@ -60,9 +60,9 @@ namespace Seal2D.Control
         protected override void OnCreateRenderObjects()
         {
             base.OnCreateRenderObjects();
-            Seal2D.Core.Figures.Figure.D2DFactory = this.D2DFactory;
+            Seal.Figures.Figure.D2DFactory = this.D2DFactory;
             Context = new DrawingContext(renderTarget);
-            ObjectManager = new Seal2D.Core.ObjectFactory();
+            ObjectManager = new Seal.ObjectFactory();
             _controller = new SelectionController(Diagram);
         }
         protected override void OnRender()

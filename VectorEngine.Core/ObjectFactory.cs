@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SharpDX;
-using Seal2D.Core.Figures;
-namespace Seal2D.Core
+using Seal.Figures;
+namespace Seal
 {
     public class ObjectFactory
     {

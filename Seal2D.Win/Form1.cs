@@ -21,12 +21,12 @@ namespace Seal2D.Win
         private void seal2DCanvas1_Click(object sender, EventArgs e)
         {
             Random rng = new Random();
-            Seal2D.Core.Figures.Line.FindDelegate = seal2DCanvas1.Diagram.FindFigureByPoint;
-            for(int i=0;i<2100;i++)
+            Seal.Figures.Line.FindDelegate = seal2DCanvas1.Diagram.FindFigureByPoint;
+            for(int i=0;i<30;i++)
             {
-                var figure = new Seal2D.Core.Figures.SolidFigure2(new Seal2D.Core.Geometries.RectangleGeometry());
-             //   var figure = new Seal2D.Core.Figures.GeometryFigure();
-                figure.Location = new Seal2D.Core.Location(rng.Next(500), rng.Next(500));
+               var figure = new Seal.Figures.SolidFigure2(new Seal.Geometries.EllipseGeometry());
+              //  var figure = new Seal.Figures.GeometryFigure();
+                figure.Location = new Seal.Location(rng.Next(500), rng.Next(500));
                 seal2DCanvas1.Diagram.Add(figure);
             }
         }
@@ -59,7 +59,7 @@ namespace Seal2D.Win
             SaveFileDialog d = new SaveFileDialog();
             if(d.ShowDialog()==DialogResult.OK)
             {
-                Seal2D.Core.IO.JsonDiagramSerializer s = new Core.IO.JsonDiagramSerializer();
+                Seal.IO.JsonDiagramSerializer s = new Core.IO.JsonDiagramSerializer();
                 s.Save(d.FileName, seal2DCanvas1.Diagram);
             }
         }
@@ -69,7 +69,7 @@ namespace Seal2D.Win
             OpenFileDialog d = new OpenFileDialog();
             if(d.ShowDialog()==DialogResult.OK)
             {
-                Seal2D.Core.IO.JsonDiagramSerializer s = new Core.IO.JsonDiagramSerializer();
+                Seal.IO.JsonDiagramSerializer s = new Core.IO.JsonDiagramSerializer();
                 seal2DCanvas1.Diagram = s.Load(d.FileName);
             }
         }

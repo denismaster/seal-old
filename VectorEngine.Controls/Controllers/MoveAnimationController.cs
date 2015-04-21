@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seal2D.Core;
-using Seal2D.Core.Figures;
+using Seal;
+using Seal.Figures;
 namespace Seal2D.Control.Controllers
 {
     public class MoveAnimationController:Controller
@@ -18,7 +18,7 @@ namespace Seal2D.Control.Controllers
         {
             if(e.Button == System.Windows.Forms.MouseButtons.Right&&Diagram.SelectedFigure!=null)
             {
-                var animation = new Seal2D.Core.Animations.MoveAnimation(this.Diagram.SelectedFigure, e.Location.X, e.Location.Y);
+                var animation = new Seal.Animations.MoveAnimation(this.Diagram.SelectedFigure, e.Location.X, e.Location.Y);
                 animation.Execute();
             }
         }

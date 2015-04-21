@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seal2D.Core.Figures;
-namespace Seal2D.Core.IO
+using Seal.Figures;
+namespace Seal.IO
 {
     public interface IDiagramSerializer
     {

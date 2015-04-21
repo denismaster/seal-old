@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
-    public class EndLineMarker : Seal2D.Core.Figures.Marker
+    public class EndLineMarker : Seal.Figures.Marker
     {
         private readonly int pointIndex;
         private readonly Func<SharpDX.Point, Figure> FindByPoint;
@@ -30,8 +30,8 @@ namespace Seal2D.Core.Figures
         }
         private SharpDX.Point LocationToPoint(Location l)
         {
-            var x = Convert.ToInt32(Math.Round(l.X));
-            var y = Convert.ToInt32(Math.Round(l.Y));
+            var x = Convert.ToInt32(System.Math.Round(l.X));
+            var y = Convert.ToInt32(System.Math.Round(l.Y));
             return new SharpDX.Point(x, y);
         }
         public override void Offset(float dx, float dy)

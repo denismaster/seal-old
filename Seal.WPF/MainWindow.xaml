@@ -181,7 +181,7 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
-            <Button Style="{StaticResource AeroToolbarButton}">
+            <Button Style="{StaticResource AeroToolbarButton}" Click="Button_Click">
                 <Button.Content>
                     <Image SnapsToDevicePixels="true" Width="16" Height="16" Source="Images/draw_calligraphic.png"></Image>
                 </Button.Content>

@@ -5,9 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using SharpDX.Direct2D1;
 using SharpDX;
-using Seal2D.Core;
-namespace Seal2D.Core.Figures
+using Seal;
+namespace Seal.Figures
 {
+    public class MarkerEventArgs : LocationEventsArgs
+    {
+        public int Index
+        {
+            get;
+            set;
+        }
+        public MarkerEventArgs(float X, float Y, int Index)
+            : base(X, Y)
+        {
+            this.X = X;
+            this.Y = Y;
+            this.Index = Index;
+        }
+    }
     public class LocationEventsArgs : EventArgs
     {
         public float X { get; set; }

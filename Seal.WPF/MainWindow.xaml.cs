@@ -21,6 +21,7 @@ namespace Seal.WPF
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        private Seal.Figures.Diagram d;
         private int _mouseX;
         private int _mouseY;
         public int mouseX
@@ -54,7 +55,8 @@ namespace Seal.WPF
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            Seal2D.Control.Seal2DCanvas d = this.Host.Child as Seal2D.Control.Seal2DCanvas;
+            this.d = d.Diagram;
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -67,20 +69,21 @@ namespace Seal.WPF
         }
         private void Seal2DCanvas_DoubleClick(object sender, EventArgs e)
         {
-            var seal2DCanvas1 = this.Host.Child as Seal2D.Control.Seal2DCanvas;
+            
             Random rng = new Random();
-            Seal2D.Core.Figures.Line.FindDelegate = seal2DCanvas1.Diagram.FindFigureByPoint;
-            var q = new Seal2D.Core.Figures.GeometryFigure();
-            q.Location = new Seal2D.Core.Location(rng.Next(500), rng.Next(500));
-            seal2DCanvas1.Diagram.Add(q);
-
-            var a = new Seal2D.Core.Figures.GeometryFigure();
-            a.Location = new Seal2D.Core.Location(rng.Next(500), rng.Next(500));
-            seal2DCanvas1.Diagram.Add(a);
-
-            var line = new Seal2D.Core.Figures.ArrowedLine(q,a);
-            seal2DCanvas1.Diagram.Add(line);
-            seal2DCanvas1.Diagram.SelectedFigure = q;
+            Seal.Figures.Line.FindDelegate = d.FindFigureByPoint;
+            for (int i = 0; i < 30; i++)
+            {
+                Seal.Figures.SolidFigure2 figure;
+                if (i % 2 == 0)
+                {
+                    figure = new Seal.Figures.SolidFigure2(new Seal.Geometries.EllipseGeometry());
+                }
+                else
+                    figure = new Seal.Figures.SolidFigure2(new Seal.Geometries.RectangleGeometry());
+                figure.Location = new Seal.Location(rng.Next(500), rng.Next(500));
+                d.Add(figure);
+            }
         }
 
         private void Seal2DCanvas_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -88,6 +91,15 @@ namespace Seal.WPF
             this.mouseX = e.X;
             this.mouseY = e.Y;
             NotifyPropertyChanged();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var g = d.SelectedFigure as Seal.Figures.GroupFigure;
+            if(g!=null)
+            {
+                d.Groups.Add(g);
+            }
         }
     }
 }

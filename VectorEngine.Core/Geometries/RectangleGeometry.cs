@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-namespace Seal2D.Core.Geometries
+using Seal.Figures;
+namespace Seal.Geometries
 {
     public class RectangleGeometry:IFilledGeometry
     {
@@ -17,6 +17,7 @@ namespace Seal2D.Core.Geometries
             set
             {
                 _rectangle.Size = value;
+                _rectangle = _rectangle.Absolute();
             }
         }
 

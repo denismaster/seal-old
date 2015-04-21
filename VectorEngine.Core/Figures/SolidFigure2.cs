@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Seal2D.Core.Geometries;
+using Seal.Geometries;
 
-namespace Seal2D.Core.Figures
+namespace Seal.Figures
 {
-    public class SolidFigure2 : Figure, ILineEndable,/* IMarkerable,*/ IMoveable, IScaleable
+    public class SolidFigure2 : Figure, ILineEndable,IMarkerable ,IMoveable, IScaleable
     {
         private readonly IFilledGeometry geometry;
         private Location _location;
@@ -18,7 +18,7 @@ namespace Seal2D.Core.Figures
             this.geometry = geometry;
         }
 
-        public override bool IsPointInside(SharpDX.Point p)
+        public override bool IsPointInside(ref SharpDX.Point p)
         {
             return geometry.Contains(p);
         }
@@ -28,11 +28,6 @@ namespace Seal2D.Core.Figures
             dc.SolidBrush.Color = SharpDX.Color.White;
             geometry.Draw(dc, this.Location);
         }
-
-        //public LinkedList<Marker> CreateMarkers()
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public SharpDX.Size2F Size
         {
@@ -91,6 +86,15 @@ namespace Seal2D.Core.Figures
                 v.Y = Location.Y + geometry.Size.Height / 2;
                 return v;
             }
+        }
+
+        public LinkedList<Marker> CreateMarkers()
+        {
+            LinkedList<Marker> markers = new LinkedList<Marker>();
+            Marker m = new SizeMarker();
+            m.targetFigure = this;
+            markers.AddLast(m);
+            return markers;
         }
     }
 }
