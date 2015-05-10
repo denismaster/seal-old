@@ -1,0 +1,198 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Vs2010Renderers
+</name>
+</assembly>
+<members>
+<member name="P:Vs2010Renderers.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Vs2010Renderers.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Vs2010Renderers.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:Vs2010Renderers.Controls.Vs2010MenuStrip.Renderer">
+	<summary>
+ Gets or sets the <see cref="T:Vs2010Renderers.Renderers.Vs2010MenuStripRenderer"/> used to draw this control.
+ </summary>
+	<returns>The <see cref="T:Vs2010Renderers.Renderers.Vs2010MenuStripRenderer"/> used to draw this control.</returns>
+	<remarks>Assign your own class inheriting <see cref="T:Vs2010Renderers.Renderers.Vs2010MenuStripRenderer"/> to apply a custom theme.</remarks>
+</member><member name="T:Vs2010Renderers.Controls.Vs2010MenuStrip">
+	<summary>
+ A MenuStrip control using the Visual Studio 2010 style.
+ </summary>
+	<remarks>Assign your own <see cref="T:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable"/> to specify a custom color scheme.</remarks>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.TextColor">
+	<summary>
+ Gets the color of the text on all items.
+ </summary>
+	<returns>The color of the text on all items.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.SelectedBorder">
+	<summary>
+ Gets the color of the border of a selected item.
+ </summary>
+	<returns>The color of the border of a selected item.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.SelectedGradientTop">
+	<summary>
+ Gets the top color of the gradient making up a selection rectangle.
+ </summary>
+	<returns>The top color of the gradient making up a selection rectangle.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.SelectedGradientMiddle">
+	<summary>
+ Gets the bottom color of the gradient making up a selection rectangle.
+ </summary>
+	<returns>The bottom color of the gradient making up a selection rectangle.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.SelectedGradientBottom">
+	<summary>
+ Gets the color of the solid bottom making up a selection rectangle.
+ </summary>
+	<returns>The color of the solid bottom making up a selection rectangle.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.PressedBackground">
+	<summary>
+ Gets the background color of a pressed item.
+ </summary>
+	<returns>The background color of a pressed item.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.CheckedBackground">
+	<summary>
+ Gets the background color of a checked item.
+ </summary>
+	<returns>The background color of a checked item.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.CheckedSelectedBackground">
+	<summary>
+ Gets the background color of a checked and selected item.
+ </summary>
+	<returns>The background color of a checked and selected item.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.DropdownBorder">
+	<summary>
+ Gets the border color of a dropdown menu.
+ </summary>
+	<returns>The border color of a dropdown menu.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010CommonColorTable.Arrow">
+	<summary>
+ Gets the color of the arrow for both menus and dropdown buttons.
+ </summary>
+	<returns>The color of the arrow for both menus and dropdown buttons.</returns>
+</member><member name="T:Vs2010Renderers.ColorTables.Vs2010CommonColorTable">
+	<summary>
+ Holds the colors for elements common to all strips, such as selection colors.
+ </summary>
+	<remarks>Inherit this class, override all properties and return your desired colors.</remarks>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.CommonColorTable">
+	<summary>
+ Gets the <see cref="T:Vs2010Renderers.ColorTables.Vs2010CommonColorTable"/> used to draw the common elements.
+ </summary>
+	<returns>The <see cref="T:Vs2010Renderers.ColorTables.Vs2010CommonColorTable"/> used to draw the common elements.</returns>
+	<remarks>Override this property and return an instance of your desired <see cref="T:Vs2010Renderers.ColorTables.Vs2010CommonColorTable"/>.</remarks>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.BottomBorder">
+	<summary>
+ Gets the color of the border underneath the <see cref="T:Vs2010Renderers.Controls.Vs2010MenuStrip"/>.
+ </summary>
+	<returns>The color of the border underneath the <see cref="T:Vs2010Renderers.Controls.Vs2010MenuStrip"/>.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.BackgroundGradientTop">
+	<summary>
+ Gets the background top gradient color.
+ </summary>
+	<returns>The background top gradient color.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.BackgroundGradientBottom">
+	<summary>
+ Gets the background bottom gradient color.
+ </summary>
+	<returns>The background bottom gradient color.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.DroppedDownItemBackground">
+	<summary>
+ Gets the background color of a menu header item that is currently dropped down.
+ </summary>
+	<returns>The background color of a menu header item that is currently dropped down.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.DropdownGradientTop">
+	<summary>
+ Gets the background top gradient color of a dropdown menu.
+ </summary>
+	<returns>The background top gradient color of a dropdown menu.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.DropdownGradientBottom">
+	<summary>
+ Gets the background bottom gradient color of a dropdown menu.
+ </summary>
+	<returns>The background bottom gradient color of a dropdown menu.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.ImageMargin">
+	<summary>
+ Gets the color of the image margin of a dropdown menu.
+ </summary>
+	<returns>The color of the image margin of a dropdown menu.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable.Separator">
+	<summary>
+ Gets the color of a separator item.
+ </summary>
+	<returns>The color of a separator item.</returns>
+</member><member name="T:Vs2010Renderers.ColorTables.Vs2010MenuStripColorTable">
+	<summary>
+ Holds the colors used by a <see cref="T:Vs2010Renderers.Renderers.Vs2010MenuStripRenderer"/>.
+ </summary>
+	<remarks>Inherit this class, override all properties and return your desired colors.</remarks>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010ToolStripColorTable.CommonColorTable">
+	<summary>
+ Gets the <see cref="T:Vs2010Renderers.ColorTables.Vs2010CommonColorTable"/> used to draw the common elements.
+ </summary>
+	<returns>The <see cref="T:Vs2010Renderers.ColorTables.Vs2010CommonColorTable"/> used to draw the common elements.</returns>
+	<remarks>Override this property and return an instance of your desired <see cref="T:Vs2010Renderers.ColorTables.Vs2010CommonColorTable"/>.</remarks>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010ToolStripColorTable.Background">
+	<summary>
+ Gets the background color.
+ </summary>
+	<returns>The background top gradient color.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010ToolStripColorTable.Border">
+	<summary>
+ Gets the border color.
+ </summary>
+	<returns>The border color.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010ToolStripColorTable.ParentBackground">
+	<summary>
+ Gets the color of a parent <see cref="T:System.Windows.Forms.ToolStripPanel"/>.
+ </summary>
+	<returns>The color of a parent <see cref="T:System.Windows.Forms.ToolStripPanel"/>.</returns>
+	<remarks>When parented by a <see cref="T:System.Windows.Forms.ToolStripPanel"/>, the background of this <see cref="T:System.Windows.Forms.ToolStripPanel"/> will be set to this color.</remarks>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010ToolStripColorTable.Grip">
+	<summary>
+ Gets the color of the grip handle.
+ </summary>
+	<returns>The color of the grip handle.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010ToolStripColorTable.Separator">
+	<summary>
+ Gets the color of a separator item.
+ </summary>
+	<returns>The color of a separator item.</returns>
+</member><member name="P:Vs2010Renderers.ColorTables.Vs2010ToolStripColorTable.OverflowBackground">
+	<summary>
+ Gets the background color of the overflow indicator.
+ </summary>
+	<returns>The background color of the overflow indicator.</returns>
+</member><member name="P:Vs2010Renderers.Controls.Vs2010ToolStrip.AutoParentBackColor">
+	<summary>
+ Gets or sets a value indicating whether a parent <see cref="T:System.Windows.Forms.ToolStripPanel"/> control will automatically adjust its BackColor.
+ </summary>
+	<returns>A value indicating whether a parent <see cref="T:System.Windows.Forms.ToolStripPanel"/> control will automatically adjust its BackColor.</returns>
+</member><member name="P:Vs2010Renderers.Controls.Vs2010ToolStrip.Renderer">
+	<summary>
+ Gets or sets the <see cref="T:Vs2010Renderers.Renderers.Vs2010ToolStripRenderer"/> used to draw this control.
+ </summary>
+	<returns>The <see cref="T:Vs2010Renderers.Renderers.Vs2010ToolStripRenderer"/> used to draw this control.</returns>
+	<remarks>Assign your own class inheriting <see cref="T:Vs2010Renderers.Renderers.Vs2010ToolStripRenderer"/> to apply a custom theme.</remarks>
+</member><member name="T:Vs2010Renderers.Controls.Vs2010ToolStrip">
+	<summary>
+ A ToolStrip control using the Visual Studio 2010 style.
+ </summary>
+	<remarks>Assign your own <see cref="T:Vs2010Renderers.ColorTables.Vs2010ToolStripColorTable"/> to specify a custom color scheme.</remarks>
+</member><member name="M:Vs2010Renderers.Renderers.CommonDrawing.DrawSelection(System.Drawing.Graphics,Vs2010Renderers.ColorTables.Vs2010CommonColorTable,System.Drawing.Rectangle,System.Boolean)">
+	<summary>
+ Draws the rounded yellow selection rectangle.
+ </summary>
+</member>
+</members>
+</doc>

@@ -11,7 +11,10 @@ namespace Seal.Figures
             var v2 = (Location)To.LineEnd;
             return Seal.Math.IsPointInSegment(ref p,ref v1, ref v2);
         }
+        public Line(ILineEndable From, ILineEndable To):base(From, To)
+        {
 
+        }
        
         public override void Draw(Drawing.DrawingContext dc)
         {

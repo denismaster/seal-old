@@ -6,10 +6,12 @@ using System.Windows.Forms;
 using SharpDX.Direct2D1;
 using SharpDX;
 using SharpDX.DirectWrite;
+using WIC = SharpDX.WIC;
 namespace Seal2D.Control
 {
     public abstract class D2DCanvas : D2DLayer
     {
+        
         public D2DCanvas()
         {
         }

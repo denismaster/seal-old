@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace Seal.Figures
 {
-    public class Polygon : Figure, IMarkerable, IPointControllable
+    public class Polygon : Figure, IMarkerable, IPointControllable, IFillColorable
     {
         private SharpDX.Direct2D1.PathGeometry _path;
         public const int DefaultSize = 50;
         private List<Location> _points;
         public Polygon(int pointCount, int X = 0, int Y = 0)
         {
+            Color = SharpDX.Color.Black;
+            FillColor = SharpDX.Color.White;
             if (pointCount < 3) throw new ArgumentOutOfRangeException();
             _points = new List<Location>();
-            var delta = 360f / pointCount;
+            var delta = 360 / pointCount;
             for (int i = 0; i < pointCount; i++)
             {
                 Location Point;
@@ -60,13 +62,15 @@ namespace Seal.Figures
 
         public override void Draw(Drawing.DrawingContext dc)
         {
+            dc.SolidBrush.Color = FillColor;
+            dc.StrokeBrush.Color = Color;
             //dc.D2DTarget.Transform = SharpDX.Matrix.Translation(100,100,0);
             dc.D2DTarget.FillGeometry(_path, dc.SolidBrush);
             dc.D2DTarget.DrawGeometry(_path, dc.StrokeBrush);
             dc.D2DTarget.Transform = SharpDX.Matrix.Identity;
         }
 
-        public SharpDX.Vector2 GetPoint(int index)
+        public Location GetPoint(int index)
         {
             if (index < 0 || index >= _points.Count)
                 return _points[0];
@@ -92,6 +96,25 @@ namespace Seal.Figures
                 list.AddLast(c);
             }
             return list;
+        }
+
+        public SharpDX.Color4 FillColor
+        {
+            get;
+            set;
+        }
+
+        public SharpDX.Color4 Color
+        {
+            get;
+            set;
+        }
+
+
+        public int StrokeWidth
+        {
+            get;
+            set;
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Seal.Figures
 {
     public interface IScaleable : IBoundable 
     {
-        Size2F Size
+        Size Size
         {
             get;
             set;

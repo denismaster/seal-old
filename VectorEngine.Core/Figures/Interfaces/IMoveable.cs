@@ -35,6 +35,11 @@ namespace Seal.Figures
     }
     public interface IMoveable
     {
+        //bool CanMove
+        //{
+        //    get;
+        //    set;
+        //}
         Location Location
         {
             get;

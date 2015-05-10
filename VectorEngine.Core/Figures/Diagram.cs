@@ -12,14 +12,10 @@ namespace Seal.Figures
         public abstract void Add(Figure f);
         public abstract void Add(LineBase l);
         public abstract Figure Extend(Figure f);
-        public abstract Figure FindFigureByPoint(Point p);
+        public abstract Figure Get(Point p);
+        public abstract void Delete(Figure f);
         public abstract void BringToFront(Figure f);
         public abstract void SendToBack(Figure f);
-        public LinkedList<LineBase> Lines
-        {
-            get;
-            set;
-        }
         public LinkedList<Figure> Figures
         {
             get;

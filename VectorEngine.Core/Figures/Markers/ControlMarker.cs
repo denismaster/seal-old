@@ -17,7 +17,7 @@ namespace Seal.Figures
             this.Location = new Location(Position.X, Position.Y);
         }
         private int pointIndex;
-
+       
         public override void UpdateLocation()
         {
             IPointControllable line = targetFigure as IPointControllable;

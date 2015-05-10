@@ -10,11 +10,11 @@ namespace Seal.Geometries
     {
         private SharpDX.Direct2D1.Ellipse _ellipse = new SharpDX.Direct2D1.Ellipse(SharpDX.Vector2.Zero, 25 / 2, 25 / 2);
 
-        public SharpDX.Size2F Size
+        public Size Size
         {
             get
             {
-                return new SharpDX.Size2F(_ellipse.RadiusX * 2, _ellipse.RadiusY * 2);
+                return new Size(_ellipse.RadiusX * 2, _ellipse.RadiusY * 2);
             }
             set
             {
@@ -23,15 +23,15 @@ namespace Seal.Geometries
             }
         }
 
-        public void Draw(Drawing.DrawingContext dc, SharpDX.Vector2 where)
+        public void Draw(Drawing.DrawingContext dc,SharpDX.Vector2 where, int strokeWidth=1)
         {
 
             _ellipse.Point.X = where.X + _ellipse.RadiusX;
             _ellipse.Point.Y = where.Y + _ellipse.RadiusY;
-            dc.DrawEllipse(_ellipse, where);
+            dc.DrawEllipse(_ellipse, where, strokeWidth);
         }
 
-        public bool Contains(SharpDX.Point p)
+        public bool Contains(ref SharpDX.Point p)
         {
             return new SharpDX.RectangleF(_ellipse.Point.X - _ellipse.RadiusX,
                 _ellipse.Point.Y - _ellipse.RadiusY, _ellipse.RadiusX * 2, _ellipse.RadiusY * 2).Contains(p);

@@ -7,11 +7,11 @@ namespace Seal.Figures
 {
     public class PolyLine : Line, IPointControllable
     {
-        private List<SharpDX.Vector2> _points;
+        private List<Location> _points;
 
-        public PolyLine(ILineEndable From, ILineEndable To, params SharpDX.Vector2[] points)
+        public PolyLine(ILineEndable From, ILineEndable To, params Location[] points):base(From,To)
         {
-            _points = new List<SharpDX.Vector2>();
+            _points = new List<Location>();
             if (points != null)
             {
                 foreach (var p in points)
@@ -19,14 +19,12 @@ namespace Seal.Figures
                     _points.Add(p);
                 }
             }
-            this.To = To;
-            this.From = From;
         }
         private void OnMarkerMove(object sender, LocationEventsArgs e)
         {
             var ex = e as MarkerEventArgs;
             if (ex != null)
-                _points[ex.Index] = new SharpDX.Vector2(ex.X, ex.Y);
+                _points[ex.Index] = new Location(ex.X, ex.Y);
         }
         public override LinkedList<Marker> CreateMarkers()
         {
@@ -75,7 +73,7 @@ namespace Seal.Figures
 
         }
 
-        public SharpDX.Vector2 GetPoint(int index)
+        public Location GetPoint(int index)
         {
             if (index < 0 || index >= _points.Count) return From.LineEnd;
             else

@@ -8,11 +8,23 @@ using System.Windows.Forms;
 
 namespace Seal.Win
 {
+    public class SealToolStripRenderer:ToolStripProfessionalRenderer
+    {
+        public SealToolStripRenderer()
+        {
+            this.RoundedEdges = false;
+        }
+    }
     public class Seal2DToolstripRenderer:ToolStripProfessionalRenderer
     {
         public Seal2DToolstripRenderer():base(new Seal2DToolstripColorTable())
         {
             this.RoundedEdges = false;
+        }
+        protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+        {
+            base.OnRenderToolStripBorder(e);
+           
         }
     }
     class Seal2DToolstripColorTable : ProfessionalColorTable
@@ -138,8 +150,8 @@ namespace Seal.Win
             get { return Color.FromArgb(255, 255, 255, 255); }
         }
         public override Color MenuItemSelected
-        { 
-            get { return Color.FromArgb(255, 255, 255, 255); }
+        {
+            get { return Color.FromArgb(255, 221, 221, 221); }
         }
         public override Color MenuItemBorder
         { 

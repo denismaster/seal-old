@@ -71,7 +71,7 @@ namespace Seal.WPF
         {
             
             Random rng = new Random();
-            Seal.Figures.Line.FindDelegate = d.FindFigureByPoint;
+            Seal.Figures.Line.FindDelegate = d.Get;
             for (int i = 0; i < 30; i++)
             {
                 Seal.Figures.SolidFigure2 figure;
@@ -98,7 +98,7 @@ namespace Seal.WPF
             var g = d.SelectedFigure as Seal.Figures.GroupFigure;
             if(g!=null)
             {
-                d.Groups.Add(g);
+                d.Groups.AddLast(g);
             }
         }
     }

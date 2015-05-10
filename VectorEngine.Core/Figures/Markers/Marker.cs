@@ -25,7 +25,7 @@ namespace Seal.Figures
                 _location = value;
             }
         }
-        public Vector2 LineEnd
+        public Location LineEnd
         {
             get
             {
@@ -73,7 +73,6 @@ namespace Seal.Figures
         {
             g.D2DTarget.Transform = Matrix.Identity;
             _drawingEllipse.Point = Location;
-            
             g.D2DTarget.FillEllipse(_drawingEllipse, g.MarkerBrush);
 
             g.D2DTarget.DrawEllipse(_drawingEllipse, g.StrokeBrush, 0.5f);
@@ -92,7 +91,7 @@ namespace Seal.Figures
         public override void Offset(float dx, float dy)
         {
             base.Offset(dx, dy);
-            (targetFigure as IScaleable).Size = new Size2F((targetFigure as IScaleable).Size.Width + dx,
+            (targetFigure as IScaleable).Size = new Size((targetFigure as IScaleable).Size.Width + dx,
                 (targetFigure as IScaleable).Size.Height + dy);
         }
     }

@@ -8,11 +8,11 @@ namespace Seal.Geometries
     {
         private SharpDX.RectangleF _rectangle = new SharpDX.RectangleF(0, 0, 25, 25);
         
-        public SharpDX.Size2F Size
+        public Size Size
         {
             get
             {
-                return _rectangle.Size;
+                return new Size(_rectangle.Width,_rectangle.Height);
             }
             set
             {
@@ -21,14 +21,14 @@ namespace Seal.Geometries
             }
         }
 
-        public void Draw(Drawing.DrawingContext dc, SharpDX.Vector2 where)
+        public void Draw(Drawing.DrawingContext dc, SharpDX.Vector2 where, int strokeWidth=1)
         {
             
             _rectangle.Location = where;
             dc.DrawRectangle(this._rectangle, where);
         }
 
-        public bool Contains(SharpDX.Point p)
+        public bool Contains(ref SharpDX.Point p)
         {
             return _rectangle.Contains(p);
         }

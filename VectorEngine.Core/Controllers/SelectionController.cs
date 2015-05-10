@@ -12,12 +12,21 @@ namespace Seal.Controllers
     {
         private Point StartDragPoint;
         private Figure draggedFigure;
-        private bool isRect = true;
+        private bool isRect = false;
         private RectangleF selectionRect;
         private ICollection<Marker> _markers;
         public SelectionController(Diagram d):base(d)
         {
             _markers = new LinkedList<Marker>();
+        }
+        public override void KeyDownAction(System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyData==System.Windows.Forms.Keys.Delete) 
+            {
+                Diagram.Delete(Diagram.SelectedFigure);
+                Diagram.SelectedFigure = null;
+                _markers.Clear();
+            }
         }
         private void UpdateMarkers()
         {
@@ -49,7 +58,7 @@ namespace Seal.Controllers
             {
                 if (m.IsPointInside(ref p)) return m;
             }
-            return this.Diagram.FindFigureByPoint(p);
+            return this.Diagram.Get(p);
         }
         public override void MouseDownAction(System.Windows.Forms.MouseEventArgs e)
         {

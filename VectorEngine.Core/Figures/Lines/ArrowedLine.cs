@@ -8,14 +8,8 @@ namespace Seal.Figures
         private Vector2 lineEnd1;
         private Vector2 lineEnd2;
         private Vector2 centerX;
-        public ArrowedLine(ILineEndable from, ILineEndable to)
+        public ArrowedLine(ILineEndable from, ILineEndable to):base(from,to)
         {
-            if (from == null || to == null)
-            {
-                throw new ArgumentNullException();
-            }
-            this.From = from;
-            this.To = to;
             if (from is IMoveable)
                 (from as IMoveable).FigureMoved += RecalcLine;
             if (to is IMoveable)
@@ -24,7 +18,7 @@ namespace Seal.Figures
         }
         private void RecalcLine(object sender, LocationEventsArgs e)
         {
-            Vector2 center = 0.5f * (From.LineEnd + To.LineEnd);
+            Vector2 center = (From.LineEnd + To.LineEnd)*0.5f;
             Vector2 lineVector = To.LineEnd - From.LineEnd;
             lineVector.Normalize();
            centerX = center + lineVector * 10;

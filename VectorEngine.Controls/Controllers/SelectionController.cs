@@ -12,9 +12,9 @@ namespace Seal2D.Control.Controllers
     public class SelectionController : Controller
     {
         private Point StartDragPoint;
-        private Figure draggedFigure;
-        private bool isRect = true;
-        private RectangleF selectionRect;
+        private Figure draggedFigure=null;
+        private bool isRect = false;
+        private RectangleF selectionRect = RectangleF.Empty;
         private ICollection<Marker> _markers;
         public SelectionController(Diagram d):base(d)
         {
@@ -50,7 +50,7 @@ namespace Seal2D.Control.Controllers
             {
                 if (m.IsPointInside(ref p)) return m;
             }
-            return this.Diagram.FindFigureByPoint(p);
+            return this.Diagram.Get(p);
         }
         public override void MouseDownAction(System.Windows.Forms.MouseEventArgs e)
         {
@@ -62,7 +62,7 @@ namespace Seal2D.Control.Controllers
             }
             CreateMarkers();
             this.StartDragPoint = new SharpDX.Point(e.Location.X, e.Location.Y);
-            if (!isRect && draggedFigure == null)
+            if (!isRect || draggedFigure == null)
             {
                 selectionRect.Location = StartDragPoint;
                 isRect = true;
@@ -98,8 +98,9 @@ namespace Seal2D.Control.Controllers
                         this.ActiveCursor = System.Windows.Forms.Cursors.Hand;
                     else
                         this.ActiveCursor = System.Windows.Forms.Cursors.Cross;
+                this.StartDragPoint = mouseLocation;
             }
-            this.StartDragPoint = mouseLocation;
+            
         }
         public override void MouseUpAction(System.Windows.Forms.MouseEventArgs e)
         {

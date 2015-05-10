@@ -4,11 +4,10 @@ using SharpDX;
 
 namespace Seal.Figures
 {
-    public class ObjectDiagram:Diagram 
+    public class ObjectDiagram:Diagram
     {
         public ObjectDiagram()
         {
-            Lines = new LinkedList<LineBase>();
             Figures = new LinkedList<Figure>();
             Groups = new LinkedList<Group>();
         }
@@ -18,31 +17,43 @@ namespace Seal.Figures
         }
         public override void Add(LineBase l)
         {
-            Lines.AddLast(l);
+            Figures.AddLast(l);
         }
-        public override Figure FindFigureByPoint(Point p)
+        public override Figure Get(Point p)
         {
-            foreach (var f in Groups)
+            for (var node = Groups.Last; node != null;node=node.Previous)
             {
-                if (f.IsPointInside(ref p)) return f;
+                if (node.Value.IsPointInside(ref p)) return node.Value;
             }
-            foreach(var f in Figures)
+            for (var node = Figures.Last; node != null; node = node.Previous)
             {
-                if (f.IsPointInside(ref p)) return f;
-            }
-            foreach (var l in Lines)
-            {
-                if (l.IsPointInside(ref p)) return l;
+                if (node.Value.IsPointInside(ref p)) return node.Value;
             }
             return null;
         }
         public override Figure Extend(Figure f)
         {
-            if (f is SolidFigure)
-                f = new SolidExtend(f as SolidFigure);
+            //if (f is SolidFigure)
+            //    f = new SolidExtend(f as SolidFigure);
             return f;
         }
-
+        public override void Delete(Figure f)
+        {
+            if(f is Group)
+            {
+                var g = f as Group;
+                foreach(var q in g.Childs)
+                {
+                    Figures.Remove(q);
+                }
+                if(Groups.Contains(g))
+                {
+                    Groups.Remove(g);
+                }
+            }
+            if (Figures.Contains(f))
+                Figures.Remove(f);
+        }
         public override void BringToFront(Figure f)
         {
                 Figures.Remove(f);

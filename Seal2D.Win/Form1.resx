@@ -120,33 +120,6 @@
   <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>679, 17</value>
   </metadata>
-  <data name="objectDiagram1.Figures" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAI8BU2VhbDJELkNvcmUsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVy
-        ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV0sIFN5c3RlbSwgVmVyc2lvbj00LjAuMC4wLCBD
-        dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAAENTeXN0ZW0u
-        Q29sbGVjdGlvbnMuR2VuZXJpYy5MaW5rZWRMaXN0YDFbW1NlYWwyRC5Db3JlLkZpZ3VyZXMuRmlndXJl
-        AgAAAAdWZXJzaW9uBUNvdW50AAAICAIAAAAAAAAAAAAAAAs=
-</value>
-  </data>
-  <data name="objectDiagram1.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAI8BU2VhbDJELkNvcmUsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVy
-        ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV0sIFN5c3RlbSwgVmVyc2lvbj00LjAuMC4wLCBD
-        dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAAEJTeXN0ZW0u
-        Q29sbGVjdGlvbnMuR2VuZXJpYy5MaW5rZWRMaXN0YDFbW1NlYWwyRC5Db3JlLkZpZ3VyZXMuR3JvdXAC
-        AAAAB1ZlcnNpb24FQ291bnQAAAgIAgAAAAAAAAAAAAAACw==
-</value>
-  </data>
-  <data name="objectDiagram1.Lines" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAI8BU2VhbDJELkNvcmUsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVy
-        ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV0sIFN5c3RlbSwgVmVyc2lvbj00LjAuMC4wLCBD
-        dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAAEVTeXN0ZW0u
-        Q29sbGVjdGlvbnMuR2VuZXJpYy5MaW5rZWRMaXN0YDFbW1NlYWwyRC5Db3JlLkZpZ3VyZXMuTGluZUJh
-        c2UCAAAAB1ZlcnNpb24FQ291bnQAAAgIAgAAAAAAAAAAAAAACw==
-</value>
-  </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>800, 17</value>
   </metadata>

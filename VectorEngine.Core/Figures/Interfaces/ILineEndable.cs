@@ -10,7 +10,7 @@ namespace Seal.Figures
 
     public interface ILineEndable
     {
-        Vector2 LineEnd
+        Location LineEnd
         {
             get;
         }

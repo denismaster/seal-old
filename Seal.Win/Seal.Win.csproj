@@ -63,17 +63,11 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="BufferedPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BufferedPanel.Designer.cs">
-      <DependentUpon>BufferedPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,12 +75,8 @@
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BufferedPanel.resx">
-      <DependentUpon>BufferedPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -155,6 +145,14 @@
     <None Include="Resources\undo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Desktop\SharpComponents\Seal.Win.Renderers.csproj">
+      <Project>{106E07CB-D2CC-489C-B7AE-D49C460B4CB7}</Project>
+      <Name>Seal.Win.Renderers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Vs2010Renderers\Vs2010Renderers.vbproj">
+      <Project>{45428bee-1e87-4514-9027-59d6887fa0da}</Project>
+      <Name>Vs2010Renderers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VectorEngine.Controls\Seal2D.Control.csproj">
       <Project>{23203865-502b-4645-9958-61dd72eadd13}</Project>
       <Name>Seal2D.Control</Name>
@@ -232,6 +230,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Found_Seal-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transform_selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border_color1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SharpDX.2.6.3\build\SharpDX.targets" Condition="Exists('..\packages\SharpDX.2.6.3\build\SharpDX.targets')" />

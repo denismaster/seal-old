@@ -21,10 +21,10 @@ namespace Seal2D.Win
         private void seal2DCanvas1_Click(object sender, EventArgs e)
         {
             Random rng = new Random();
-            Seal.Figures.Line.FindDelegate = seal2DCanvas1.Diagram.FindFigureByPoint;
+            Seal.Figures.Line.FindDelegate = seal2DCanvas1.Diagram.Get;
             for(int i=0;i<30;i++)
             {
-               var figure = new Seal.Figures.SolidFigure2(new Seal.Geometries.EllipseGeometry());
+               var figure = new Seal.Figures.GeometryFigure(new Seal.Geometries.EllipseGeometry());
               //  var figure = new Seal.Figures.GeometryFigure();
                 figure.Location = new Seal.Location(rng.Next(500), rng.Next(500));
                 seal2DCanvas1.Diagram.Add(figure);

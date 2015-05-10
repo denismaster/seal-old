@@ -45,5 +45,17 @@ namespace Seal
         {
             return new Location(d.X, d.Y);
         }
+        public static Location operator+(Location u, Location v)
+        {
+            return new Location(u.X + v.X, u.Y + v.Y);
+        }
+        public static Location operator -(Location u, Location v)
+        {
+            return new Location(u.X - v.X, u.Y - v.Y);
+        }
+        public static Location operator *(Location u, float f)
+        {
+            return new Location(u.X * f, u.Y * f);
+        }
     }
 }

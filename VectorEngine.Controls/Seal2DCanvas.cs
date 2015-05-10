@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Seal.Drawing;
 using Seal.Figures;
-using Seal2D.Control.Controllers;
+using Seal.Controllers;
 using SharpDX;
 namespace Seal2D.Control
 {
@@ -36,12 +36,7 @@ namespace Seal2D.Control
             get;
             set;
         }
-        protected Seal.ObjectFactory ObjectManager
-        {
-            get;
-            set;
-        }
-        protected Controller ModeController
+        public Controller ModeController
         {
             get
             {
@@ -62,16 +57,12 @@ namespace Seal2D.Control
             base.OnCreateRenderObjects();
             Seal.Figures.Figure.D2DFactory = this.D2DFactory;
             Context = new DrawingContext(renderTarget);
-            ObjectManager = new Seal.ObjectFactory();
-            _controller = new SelectionController(Diagram);
+            //ObjectManager = new Seal.ObjectFactory();
+            _controller = new Seal.Controllers.AddLineController(Diagram);
         }
         protected override void OnRender()
         {
             renderTarget.Clear(Color.White);
-            foreach (var l in Diagram.Lines)
-            {
-                l.Draw(Context);
-            }
             foreach (var f in Diagram.Figures)
             {
                 f.Draw(Context);
@@ -105,7 +96,7 @@ namespace Seal2D.Control
         {
             var g = Context.D2DTarget;
             g.Transform = SharpDX.Matrix.Translation(r.Bounds.Left, r.Bounds.Top, 0);
-            Context.SolidBrush.Color = Color.SkyBlue;
+            Context.SolidBrush.Color = Color.DeepSkyBlue;
             g.DrawRectangle(new RectangleF(-2, -2, r.Bounds.Width + 4, r.Bounds.Height + 4), Context.SolidBrush, 1);
             g.Transform = SharpDX.Matrix.Identity;
         }
@@ -113,11 +104,13 @@ namespace Seal2D.Control
         {
             _controller.MouseUpAction(e);
             Invalidate();
+            base.OnMouseUp(e);
         }
         protected override void OnMouseDown(MouseEventArgs e)
         {
             _controller.MouseDownAction(e);
             this.Invalidate();
+            base.OnMouseDown(e);
         }
         protected override void OnMouseMove(MouseEventArgs e)
         {
@@ -125,6 +118,14 @@ namespace Seal2D.Control
             _controller.MouseMoveAction(e);
             this.Cursor = _controller.ActiveCursor;
             Invalidate();
+            base.OnMouseMove(e);
+        }
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            
+            _controller.KeyDownAction(e);
+            Invalidate();
+            base.OnKeyDown(e);
         }
     }
 }

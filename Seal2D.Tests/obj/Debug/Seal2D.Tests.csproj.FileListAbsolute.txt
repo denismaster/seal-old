@@ -1,0 +1,5 @@
+C:\Users\Денис\Documents\Seal2D\Seal2D.Tests\bin\Debug\Seal2D.Tests.dll
+C:\Users\Денис\Documents\Seal2D\Seal2D.Tests\bin\Debug\Seal2D.Tests.pdb
+C:\Users\Денис\Documents\Seal2D\Seal2D.Tests\obj\Debug\Seal2D.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Денис\Documents\Seal2D\Seal2D.Tests\obj\Debug\Seal2D.Tests.dll
+C:\Users\Денис\Documents\Seal2D\Seal2D.Tests\obj\Debug\Seal2D.Tests.pdb
