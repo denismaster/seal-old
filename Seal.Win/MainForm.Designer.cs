@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Seal.Figures.ObjectDiagram objectDiagram1 = new Seal.Figures.ObjectDiagram();
+            Seal.Figures.ObjectDiagram objectDiagram2 = new Seal.Figures.ObjectDiagram();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +76,9 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.statusToolStrip = new System.Windows.Forms.StatusStrip();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.seal2DCanvas1 = new Seal2D.Control.Seal2DCanvas();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
@@ -102,17 +105,14 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.seal2DCanvas1 = new Seal2D.Control.Seal2DCanvas();
-            this.statusToolStrip = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -432,6 +432,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator8
             // 
@@ -515,6 +516,46 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
+            // 
+            // statusToolStrip
+            // 
+            this.statusToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.statusToolStrip.Name = "statusToolStrip";
+            this.statusToolStrip.Size = new System.Drawing.Size(897, 22);
+            this.statusToolStrip.TabIndex = 21;
+            this.statusToolStrip.Text = "statusStrip1";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.seal2DCanvas1, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(897, 488);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // seal2DCanvas1
+            // 
+            objectDiagram2.Figures = ((System.Collections.Generic.LinkedList<Seal.Figures.Figure>)(resources.GetObject("objectDiagram2.Figures")));
+            objectDiagram2.Groups = ((System.Collections.Generic.LinkedList<Seal.Figures.Group>)(resources.GetObject("objectDiagram2.Groups")));
+            objectDiagram2.SelectedFigure = null;
+            this.seal2DCanvas1.Diagram = objectDiagram2;
+            this.seal2DCanvas1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.seal2DCanvas1.Location = new System.Drawing.Point(28, 4);
+            this.seal2DCanvas1.ModeController = null;
+            this.seal2DCanvas1.Name = "seal2DCanvas1";
+            this.seal2DCanvas1.Size = new System.Drawing.Size(840, 480);
+            this.seal2DCanvas1.TabIndex = 0;
+            this.seal2DCanvas1.Text = "seal2DCanvas1";
             // 
             // toolStrip1
             // 
@@ -743,6 +784,7 @@
             this.toolStripButton12.Name = "toolStripButton12";
             this.toolStripButton12.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton12.Text = "toolStripButton12";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click_1);
             // 
             // toolStripButton13
             // 
@@ -752,46 +794,7 @@
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton13.Text = "toolStripButton13";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.seal2DCanvas1, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(897, 488);
-            this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // seal2DCanvas1
-            // 
-            objectDiagram1.Figures = ((System.Collections.Generic.LinkedList<Seal.Figures.Figure>)(resources.GetObject("objectDiagram1.Figures")));
-            objectDiagram1.Groups = ((System.Collections.Generic.LinkedList<Seal.Figures.Group>)(resources.GetObject("objectDiagram1.Groups")));
-            objectDiagram1.SelectedFigure = null;
-            this.seal2DCanvas1.Diagram = objectDiagram1;
-            this.seal2DCanvas1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seal2DCanvas1.Location = new System.Drawing.Point(28, 4);
-            this.seal2DCanvas1.ModeController = null;
-            this.seal2DCanvas1.Name = "seal2DCanvas1";
-            this.seal2DCanvas1.Size = new System.Drawing.Size(840, 480);
-            this.seal2DCanvas1.TabIndex = 0;
-            this.seal2DCanvas1.Text = "seal2DCanvas1";
-            // 
-            // statusToolStrip
-            // 
-            this.statusToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.statusToolStrip.Name = "statusToolStrip";
-            this.statusToolStrip.Size = new System.Drawing.Size(897, 22);
-            this.statusToolStrip.TabIndex = 21;
-            this.statusToolStrip.Text = "statusStrip1";
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click_1);
             // 
             // MainForm
             // 
@@ -817,9 +820,9 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

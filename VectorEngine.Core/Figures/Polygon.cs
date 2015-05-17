@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Seal.Figures
 {
-    public class Polygon : Figure, IMarkerable, IPointControllable, IFillColorable
+    public class Polygon : Figure, IMarkerable, IPointControllable, IFillColorable, IMoveable
     {
+        private Location _location;
         private SharpDX.Direct2D1.PathGeometry _path;
         public const int DefaultSize = 50;
         private List<Location> _points;
+        
         public Polygon(int pointCount, int X = 0, int Y = 0)
         {
             Color = SharpDX.Color.Black;
@@ -27,6 +29,12 @@ namespace Seal.Figures
                 Point = new Location(x, y);
                 _points.Add(Point);
             }
+            _location = getLocation();
+            _location = new Location(_location.X - X, _location.Y - Y);
+            //for(int i=0;i<_points.Count;i++)
+            //{
+            //    _points[i] = new Location(_points[i].X + _location.X+X, _points[i].Y + _location.Y+Y);
+            //}
             RecalcPath();
         }
         public Polygon(params Location[] points)
@@ -40,8 +48,8 @@ namespace Seal.Figures
                 _path.Dispose();
                 _path = null;
             }
-            _path = new SharpDX.Direct2D1.PathGeometry(D2DFactory);
-            var sink = _path.Open();
+            var new_path = new SharpDX.Direct2D1.PathGeometry(D2DFactory);
+            var sink = new_path.Open();
             sink.BeginFigure(_points[0], SharpDX.Direct2D1.FigureBegin.Filled);
             for (int i = 0; i < _points.Count; i++)
             {
@@ -49,11 +57,15 @@ namespace Seal.Figures
             }
             sink.EndFigure(SharpDX.Direct2D1.FigureEnd.Closed);
             sink.Close();
+            sink.Dispose();
+            _path = new_path;
         }
 
         public override bool IsPointInside(ref SharpDX.Point p)
         {
-            SharpDX.Point here = p;
+            var px = Convert.ToInt32(p.X - _location.X);
+            var py = Convert.ToInt32(p.Y - _location.Y);
+            SharpDX.Point here = new SharpDX.Point(px,py);
             if (_path != null)
                 return _path.StrokeContainsPoint(here, 1) || _path.FillContainsPoint(here);
             else
@@ -64,7 +76,7 @@ namespace Seal.Figures
         {
             dc.SolidBrush.Color = FillColor;
             dc.StrokeBrush.Color = Color;
-            //dc.D2DTarget.Transform = SharpDX.Matrix.Translation(100,100,0);
+            dc.D2DTarget.Transform = SharpDX.Matrix.Translation(_location.X,_location.Y,0);
             dc.D2DTarget.FillGeometry(_path, dc.SolidBrush);
             dc.D2DTarget.DrawGeometry(_path, dc.StrokeBrush);
             dc.D2DTarget.Transform = SharpDX.Matrix.Identity;
@@ -82,12 +94,14 @@ namespace Seal.Figures
             if (ex != null)
             {
                 _points[ex.Index] = new Location(ex.X, ex.Y);
-                RecalcPath();
+                //if (FigureMoved == null)
+                    RecalcPath();
             }
         }
         public LinkedList<Marker> CreateMarkers()
         {
             var list = new LinkedList<Marker>();
+            
             for (int i = 0; i < _points.Count; i++)
             {
                 var c = new ControlMarker(i, _points[i]);
@@ -116,5 +130,47 @@ namespace Seal.Figures
             get;
             set;
         }
+
+        public Location Location
+        {
+            get
+            {
+                return _location;
+            }
+            set
+            {
+                _location = value;
+            }
+        }
+        public void Offset(float dx, float dy)
+        {
+            
+            //_location.X += dx;
+            //_location.Y += dy;
+            for (int i = 0; i < _points.Count; i++)
+                _points[i] = new Seal.Location(_points[i].X + dx, _points[i].Y + dy);
+        }
+        public event EventHandler<LocationEventsArgs> FigureMoved = (s, e) => { };
+        public void OnFigureMove(object sender, LocationEventsArgs e)
+        {
+            if (FigureMoved != null)
+            {
+                FigureMoved(sender, e);
+            }
+        }
+        private Location getLocation()
+        {
+            float x = _points[0].X;
+            float y = _points[0].Y;
+            for (int i = 0; i < _points.Count; i++)
+            {
+                if (_points[i].X < x)
+                    x = _points[i].X;
+                if (_points[i].Y < y)
+                    y = _points[i].Y;
+            }
+            return new Location(x, y);
+        }
+
     }
 }

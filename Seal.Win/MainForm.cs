@@ -200,5 +200,84 @@ namespace Seal.Win
         {
             Controller = ControllerFactory.Get<AddLineController>();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            String s = "";
+            if (ShowInputDialog(ref s) == DialogResult.OK)
+            {
+                var newPolygon = new Polygon(Convert.ToInt32(s), 100, 100);
+                seal2DCanvas1.Diagram.Add(newPolygon);
+                newPolygon.FillColor = new SharpDX.Color4(255, 0, 255, 255);
+            }
+            
+        }
+        private DialogResult ShowInputDialog(ref string input)
+        {
+            System.Drawing.Size size = new System.Drawing.Size(200, 70);
+            Form inputBox = new Form();
+
+            inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            inputBox.ClientSize = size;
+            inputBox.Text = "N углов";
+
+            System.Windows.Forms.TextBox textBox = new TextBox();
+            textBox.Size = new System.Drawing.Size(size.Width - 10, 23);
+            textBox.Location = new System.Drawing.Point(5, 5);
+            textBox.Text = input;
+            textBox.KeyPress += new KeyPressEventHandler(detectKeyPress);
+            inputBox.Controls.Add(textBox);
+
+            Button okButton = new Button();
+            okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            okButton.Name = "okButton";
+            okButton.Size = new System.Drawing.Size(75, 23);
+            okButton.Text = "&OK";
+            okButton.Location = new System.Drawing.Point(size.Width - 80 - 80, 39);
+            inputBox.Controls.Add(okButton);
+
+            Button cancelButton = new Button();
+            cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new System.Drawing.Size(75, 23);
+            cancelButton.Text = "&Cancel";
+            cancelButton.Location = new System.Drawing.Point(size.Width - 80, 39);
+            inputBox.Controls.Add(cancelButton);
+
+            inputBox.AcceptButton = okButton;
+            inputBox.CancelButton = cancelButton;
+
+            DialogResult result = inputBox.ShowDialog();
+            input = textBox.Text;
+            return result;
+
+        }
+
+
+        public void detectKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+                e.Handled = true;
+        }
+
+        public Seal2D.Control.Seal2DCanvas getCanvas()
+        {
+            return this.seal2DCanvas1;
+        }
+
+        private void toolStripButton12_Click_1(object sender, EventArgs e)
+        {
+            Palette pal = new Palette(this);
+            pal.setIsFill(true);
+            pal.Show();
+
+        }
+
+        private void toolStripButton13_Click_1(object sender, EventArgs e)
+        {
+            Palette pal = new Palette(this);
+            pal.setIsFill(false);
+            pal.Show();
+        }
     }
 }

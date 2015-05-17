@@ -173,7 +173,10 @@
   <metadata name="statusToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>277, 136</value>
   </metadata>
-  <data name="objectDiagram1.Figures" mimetype="application/x-microsoft.net.object.binary.base64">
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>172, 136</value>
+  </metadata>
+  <data name="objectDiagram2.Figures" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAI8BU2VhbDJELkNvcmUsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVy
         ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV0sIFN5c3RlbSwgVmVyc2lvbj00LjAuMC4wLCBD
@@ -182,7 +185,7 @@
         cnNpb24FQ291bnQAAAgIAgAAAAAAAAAAAAAACw==
 </value>
   </data>
-  <data name="objectDiagram1.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="objectDiagram2.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAI8BU2VhbDJELkNvcmUsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVy
         ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV0sIFN5c3RlbSwgVmVyc2lvbj00LjAuMC4wLCBD
@@ -191,9 +194,6 @@
         c2lvbgVDb3VudAAACAgCAAAAAAAAAAAAAAAL
 </value>
   </data>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>172, 136</value>
-  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAQAEBAAAAAAIABoBAAARgAAACAgAAAAACAAqBAAAK4EAAAwMAAAAAAgAKglAABWFQAAQEAAAAAA
