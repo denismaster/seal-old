@@ -55,7 +55,7 @@ namespace Seal2D.Control
         protected override void OnCreateRenderObjects()
         {
             base.OnCreateRenderObjects();
-            Seal.Figures.Figure.D2DFactory = this.D2DFactory;
+            
             Context = new DrawingContext(renderTarget);
             //ObjectManager = new Seal.ObjectFactory();
             _controller = new Seal.Controllers.AddLineController(Diagram);
@@ -122,7 +122,19 @@ namespace Seal2D.Control
         }
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            
+            if (e.KeyData == System.Windows.Forms.Keys.Enter)
+            {
+                var obj = Diagram.SelectedFigure as GeometryFigure;
+                if (obj != null)
+                {
+                    System.Windows.Forms.TextBox v = new System.Windows.Forms.TextBox();
+                    v.Parent = this;
+                    v.Size = new System.Drawing.Size(50, 25);
+                    v.Location = new System.Drawing.Point(100, 100);
+                    v.TextChanged += (ex, ev) => { obj.text.Value = v.Text; };
+                    v.LostFocus += (ev, ex) => { v.Dispose(); v = null; };
+                }
+            }
             _controller.KeyDownAction(e);
             Invalidate();
             base.OnKeyDown(e);

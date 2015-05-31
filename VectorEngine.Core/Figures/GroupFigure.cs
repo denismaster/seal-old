@@ -27,7 +27,7 @@ namespace Seal.Figures
             return false;
         }
 
-        public override void Draw(Drawing.DrawingContext dc)
+        public override void Draw(Drawing.IDrawingContext dc)
         {
             //nothing to do, childs draw manually.
         }

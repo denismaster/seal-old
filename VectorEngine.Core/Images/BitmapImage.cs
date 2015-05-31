@@ -25,12 +25,12 @@ namespace Seal.Images
             }
         }
 
-        public void Draw(Drawing.DrawingContext dc, Location where)
+        public void Draw(Drawing.IDrawingContext dc, Location where)
         {
             try
             {
               //  dc.D2DTarget.Transform = SharpDX.Matrix.Translation(where.X, where.Y, 0);
-                dc.D2DTarget.DrawBitmap(image, 1, BitmapInterpolationMode.Linear);
+                D2D.Instanse.D2DRenderTarget.DrawBitmap(image, 1, BitmapInterpolationMode.Linear);
               //  dc.D2DTarget.Transform = SharpDX.Matrix.Identity;
             }
             catch

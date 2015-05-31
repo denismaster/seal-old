@@ -1,238 +1,477 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Seal.Drawing.DrawingContext" Collapsed="true">
-    <Position X="31.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAABAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Drawing\DrawingContext.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.Figure" Collapsed="true">
-    <Position X="16.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAABIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\FigureBase.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.ImageFigure" Collapsed="true">
-    <Position X="15.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>Figures\ImageFigure.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Seal.Figures.LocationEventsArgs" Collapsed="true">
-    <Position X="33" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
-      <FileName>Figures\Interfaces\IMoveable.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.LineBase" Collapsed="true">
-    <Position X="24.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAgAAAAAAAA=</HashCode>
-      <FileName>Figures\Lines\Line.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Seal.Figures.Marker" Collapsed="true">
-    <Position X="6.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAAgAgAAABAAAgAAAAIAAgAAAAAIAAAAACAAAAAAgAA=</HashCode>
-      <FileName>Figures\Markers\Marker.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Seal.Figures.SizeMarker" Collapsed="true">
-    <Position X="4" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>Figures\Markers\Marker.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.SolidFigure">
-    <Position X="17.75" Y="4" Width="1.5" />
-    <InheritanceLine Type="Seal.Figures.Figure" ManuallyRouted="true">
-      <Path>
-        <Point X="17.25" Y="2.441" />
-        <Point X="17.25" Y="2.653" />
-        <Point X="17.787" Y="2.653" />
-        <Point X="17.787" Y="3.083" />
-        <Point X="19.131" Y="3.083" />
-        <Point X="19.131" Y="3.698" />
-        <Point X="18.5" Y="3.698" />
-        <Point X="18.5" Y="4" />
-      </Path>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>gAAgAAAAABAAAgAAAAIBAgAAAAAIAAAAACAAgAAAggA=</HashCode>
-      <FileName>Figures\SolidFigure.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Seal.Figures.VectorObject" Collapsed="true">
-    <Position X="15.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\VectorObject.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.GroupFigure" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="13" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAIAAAAAABAAAgAAAAIAAgAAAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>Figures\GroupFigure.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="Seal.Figures.SolidExtend">
-    <Position X="15.5" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAAAAAAAABAAgAAAAAIABgAAAAAAEAAAAAgAAAAAggA=</HashCode>
-      <FileName>Figures\SolidExtend.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Seal.ObjectFactory" Collapsed="true">
-    <Position X="34.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>ObjectFactory.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.Line" Collapsed="true">
-    <Position X="21" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAgAAAAAAAAAAAAIAAAAAAAgAAAAAAAA=</HashCode>
-      <FileName>Figures\Lines\SimpleLine.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.ArrowedLine" Collapsed="true">
-    <Position X="22" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\Lines\ArrowedLine.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Curve" Collapsed="true">
-    <Position X="26.5" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\Curves\Curve.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.ControlMarker" Collapsed="true">
-    <Position X="8.5" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\Markers\ControlMarker.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.WaveCurve" Collapsed="true">
-    <Position X="28.75" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\Curves\WaveCurve.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.BezierCurve" Collapsed="true">
-    <Position X="26.5" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\Curves\BezierCurve.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.PolyLine" Collapsed="true">
-    <Position X="19.75" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\Lines\PolyLine.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.PolyCurve" Collapsed="true">
-    <Position X="24.25" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\Curves\PolyCurve.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Figures.Group" Collapsed="true">
-    <Position X="13" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\GroupFigure.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.StrokeFigure" Collapsed="true">
-    <Position X="10.75" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAABAAAgAAAAAAAAAAAAAAIACAAAAAAAAAAAA=</HashCode>
-      <FileName>Figures\StrokeFigure.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Seal.Animations.Animation" Collapsed="true">
-    <Position X="1.75" Y="1.75" Width="1.5" />
+  <Class Name="Seal.Animations.Animation">
+    <Position X="15.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Animations\Animation.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Seal.Animations.MoveAnimation" Collapsed="true">
+    <Position X="18.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABgAAAAYAA=</HashCode>
+      <FileName>Animations\MoveAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.D2D" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACIAAQAABAAAQAgAAAAAAEAADAAAAgAAAAA=</HashCode>
+      <FileName>D2D.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Math" Collapsed="true">
+    <Position X="38.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.StrokeFigure" Collapsed="true">
+    <Position X="29.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAABAAAgAAAAAAAAAAAAAAIACAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\StrokeFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Controllers.AddFigureController&lt;T&gt;" Collapsed="true">
+    <Position X="17.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCACAAAAAAAAAAAAIAAAAACAAAAAAAAARAAAAAAAAE=</HashCode>
+      <FileName>Controllers\AddController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Controllers.AddLineController" Collapsed="true">
+    <Position X="12.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEACAIAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAAAAAIE=</HashCode>
+      <FileName>Controllers\AddController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Controllers.Controller">
+    <Position X="14" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAoE=</HashCode>
+      <FileName>Controllers\Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Controllers.ControllerFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="40" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAIAAAABAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Controllers\ControllerFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Controllers.EmptyController" Collapsed="true">
+    <Position X="11.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\EmptyController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Controllers.MoveAnimationController" Collapsed="true">
+    <Position X="13.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Controllers\MoveAnimationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Controllers.SelectionController" Collapsed="true">
+    <Position X="15" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACABAAAAAAAAAAAACAIAAwAAAAAAAAQgAIAgAAKE=</HashCode>
+      <FileName>Controllers\SelectionController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Controllers.StrokeController" Collapsed="true">
+    <Position X="15" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACACAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAE=</HashCode>
+      <FileName>Controllers\StrokeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Drawing.DrawingContext" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAARAgCAAAAAAAIAgAAAAAAgAAAAAEAEAAhAAAE=</HashCode>
+      <FileName>Drawing\DrawingContext.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Figures.Extensions" Collapsed="true">
+    <Position X="41.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.Diagram">
+    <Position X="27.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAIAAEAAAAAAAABAEAAAAAAAAAUAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Figures\Diagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.Figure">
+    <Position X="24.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\FigureBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.GeometryFigure">
+    <Position X="25.5" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>gACgAAAAABAAggCAAAIAAgAAAAAAAACICCgAgIgAggA=</HashCode>
+      <FileName>Figures\GeometryFigure.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Seal.Figures.Group" Collapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\GroupFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.GroupFigure">
+    <Position X="29.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIAAAAAABAAAgAAAAIAAgAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Figures\GroupFigure.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Seal.Figures.ImageFigure">
+    <Position X="31.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAABAAgggAAAIAAgAAEAAAAAAAACgAAAAAggA=</HashCode>
+      <FileName>Figures\ImageFigure.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Seal.Figures.MarkerEventArgs" Collapsed="true">
+    <Position X="11" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Figures\Interfaces\IMoveable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.LocationEventsArgs" Collapsed="true">
+    <Position X="6.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Figures\Interfaces\IMoveable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.LineBase">
+    <Position X="22" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAgCAAAAAAAAAAAAIAAAAAAgAgAAAAAA=</HashCode>
+      <FileName>Figures\Lines\Line.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Seal.Figures.Line">
+    <Position X="21.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAgAAAAAAAAAAAAIAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Figures\Lines\SimpleLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.Marker" Collapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAiAgAAABAAAgAAAAIAAgAAAAAIAAAAACAAAAAAgAA=</HashCode>
+      <FileName>Figures\Markers\Marker.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Seal.Figures.ObjectDiagram">
+    <Position X="29.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAIAAAAAAAAAAABAEAAAAAAAAAEAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Figures\ObjectDiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.Polygon">
+    <Position X="23.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAICIAAAABACAgCAgAIAAgAAAAAAQAAACCgAgAgAgAA=</HashCode>
+      <FileName>Figures\Polygon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Seal.Figures.VectorObject">
+    <Position X="12" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\VectorObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.Interfaces.MyGeometry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="40" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Figures\Interfaces\ITextable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Geometries.EllipseGeometry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="40" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACggAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Geometries\EllipseGeometry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Geometries.RectangleGeometry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAAAAAAAAAAAQAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Geometries\RectangleGeometry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Images.BitmapImage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Images\BitmapImage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Images.BitmapImageProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABEIAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Images\BitmapImageProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.IO.JsonDiagramSerializer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\JsonDiagramSerializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.IO.XmlDiagramSerializer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\XmlDiagramSerializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Text.D2DText" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAgAAAAAAAAAAAAAAAAAIAAAgAAAAAgA=</HashCode>
+      <FileName>Text\D2DText.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Seal.Figures.ControlMarker" Collapsed="true">
+    <Position X="19.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Figures\Markers\ControlMarker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Seal.Figures.EndLineMarker" Collapsed="true">
-    <Position X="6.25" Y="4.75" Width="1.5" />
+    <Position X="18" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAECAggAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Figures\Markers\EndLineMarker.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Seal.Figures.IBoundable" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+  <Class Name="Seal.Figures.SizeMarker" Collapsed="true">
+    <Position X="16.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Figures\Markers\Marker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.ArrowedLine">
+    <Position X="19.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAgAAAAAAAAgAAAAAAQAAAAAAAAEAAAA=</HashCode>
+      <FileName>Figures\Lines\ArrowedLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seal.Figures.CurveLine">
+    <Position X="28.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAABAAAgAAgAAAAAgAIAAAQTAAAAgAgAAAAAA=</HashCode>
+      <FileName>Figures\Lines\deCasteljo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Seal.Figures.PolyLine">
+    <Position X="30.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAABAAAgAAgAAAAAAAAAAAQAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Figures\Lines\PolyLine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="Seal.Location">
+    <Position X="34.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQAAAAgaAEAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Base\Location.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Seal.Size">
+    <Position X="38.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAABAAAAAAAAAAAAEAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\Size.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Seal.ID2D" Collapsed="true">
+    <Position X="32.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAIAAAAAAAAAAAgAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>ID2D.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Controllers.IControllerFactory" Collapsed="true">
+    <Position X="32.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\IControllerFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Drawing.IDrawingContext" Collapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAIAgAAAAAAgAAAAAEAEAAhAAAE=</HashCode>
+      <FileName>Drawing\IDrawingContext.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Figures.IDiagram" Collapsed="true">
+    <Position X="36.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAEAAAAAAAAAEAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Figures\IDiagram.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Figures.IBoundable">
+    <Position X="41.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Figures\Interfaces\IBoundable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Seal.Figures.IColorable" Collapsed="true">
-    <Position X="31.25" Y="1.75" Width="1.5" />
+  <Interface Name="Seal.Figures.IColorable">
+    <Position X="34.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Figures\Interfaces\IColorable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Seal.Figures.ILineEndable" Collapsed="true">
-    <Position X="33" Y="1.75" Width="1.5" />
+  <Interface Name="Seal.Figures.IFillColorable">
+    <Position X="34.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Figures\Interfaces\IFillColorable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Figures.ILineEndable">
+    <Position X="38.25" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\Interfaces\ILineEndable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Seal.Figures.IMoveable">
-    <Position X="31.25" Y="2.5" Width="1.5" />
+  <Interface Name="Seal.Figures.IMarkerable">
+    <Position X="36.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Figures\Interfaces\IMarkerable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Figures.IMoveable" Collapsed="true">
+    <Position X="38.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAIAAgAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Figures\Interfaces\IMoveable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Seal.Figures.IRotateable" Collapsed="true">
-    <Position X="33" Y="2.5" Width="1.5" />
+    <Position X="36.5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Figures\Interfaces\IRotateable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Seal.Figures.IScaleable" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+  <Interface Name="Seal.Figures.IScaleable">
+    <Position X="41.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures\Interfaces\IScaleable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Seal.Figures.IMarkerable" Collapsed="true">
-    <Position X="34.75" Y="1.75" Width="1.5" />
+  <Interface Name="Seal.Figures.IPointControllable">
+    <Position X="40" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
-      <FileName>Figures\Interfaces\IMarkerable.cs</FileName>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\Lines\Line.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Figures.Interfaces.ITextable" Collapsed="true">
+    <Position X="38.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Figures\Interfaces\ITextable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Geometries.IGeometry">
+    <Position X="40.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Geometries\IGeometry.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Geometries.IFilledGeometry">
+    <Position X="42.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometries\IGeometry.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Images.IImage" Collapsed="true">
+    <Position X="38.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Images\IImage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Images.IImageProvider" Collapsed="true">
+    <Position X="40" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Images\IImageProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.IO.IDiagramSerializer" Collapsed="true">
+    <Position X="32.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IO\IDiagramSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Seal.Text.IText" Collapsed="true">
+    <Position X="36.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Text\IText.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

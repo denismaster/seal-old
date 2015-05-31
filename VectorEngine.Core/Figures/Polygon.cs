@@ -48,7 +48,7 @@ namespace Seal.Figures
                 _path.Dispose();
                 _path = null;
             }
-            var new_path = new SharpDX.Direct2D1.PathGeometry(D2DFactory);
+            var new_path = new SharpDX.Direct2D1.PathGeometry(D2D.Instanse.D2DFactory);
             var sink = new_path.Open();
             sink.BeginFigure(_points[0], SharpDX.Direct2D1.FigureBegin.Filled);
             for (int i = 0; i < _points.Count; i++)
@@ -72,14 +72,15 @@ namespace Seal.Figures
                 return false;
         }
 
-        public override void Draw(Drawing.DrawingContext dc)
+        public override void Draw(Drawing.IDrawingContext dc)
         {
-            dc.SolidBrush.Color = FillColor;
-            dc.StrokeBrush.Color = Color;
-            dc.D2DTarget.Transform = SharpDX.Matrix.Translation(_location.X,_location.Y,0);
-            dc.D2DTarget.FillGeometry(_path, dc.SolidBrush);
-            dc.D2DTarget.DrawGeometry(_path, dc.StrokeBrush);
-            dc.D2DTarget.Transform = SharpDX.Matrix.Identity;
+            var xdc = dc as Drawing.DrawingContext;
+            xdc.FillColor = FillColor;
+            xdc.StrokeColor = Color;
+            xdc.Translate(_location.X, _location.Y);
+            xdc.D2DTarget.FillGeometry(_path, xdc.SolidBrush);
+           xdc.D2DTarget.DrawGeometry(_path, xdc.StrokeBrush);
+            dc.IdentityTransform();
         }
 
         public Location GetPoint(int index)
@@ -112,13 +113,13 @@ namespace Seal.Figures
             return list;
         }
 
-        public SharpDX.Color4 FillColor
+        public SharpDX.Color FillColor
         {
             get;
             set;
         }
 
-        public SharpDX.Color4 Color
+        public SharpDX.Color Color
         {
             get;
             set;

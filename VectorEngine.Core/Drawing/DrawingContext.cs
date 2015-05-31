@@ -13,7 +13,7 @@ namespace Seal.Drawing
         }
         public void Scale(float kx, float ky)
         {
-            D2DTarget.Transform *= Matrix.Scaling(kx, ky, 1);
+             D2DTarget.Transform *= Matrix.Scaling(kx, ky, 1);
         }
         public void Translate(float dx, float dy)
         {
@@ -60,6 +60,47 @@ namespace Seal.Drawing
             get;
             set;
         }
-        public Direct2D.SolidColorBrush MarkerBrush;
+        public Direct2D.SolidColorBrush MarkerBrush
+        {
+            get;
+            set;
+        }
+
+
+        public Color StrokeColor
+        {
+            get
+            {
+                return (Color)StrokeBrush.Color;
+            }
+            set
+            {
+                StrokeBrush.Color = value;
+            }
+        }
+
+        public Color FillColor
+        {
+            get
+            {
+                return (Color)SolidBrush.Color;
+            }
+            set
+            {
+                SolidBrush.Color = value;
+            }
+        }
+
+        public Color MarkerColor
+        {
+            get
+            {
+                return (Color)MarkerBrush.Color;
+            }
+            set
+            {
+                MarkerBrush.Color = value;
+            }
+        }
     }
 }

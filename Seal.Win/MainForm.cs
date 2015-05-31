@@ -93,6 +93,7 @@ namespace Seal.Win
             {
                 Diagram.Groups.Remove(group);
             }
+           // Diagram.Add(new GeometryFigure( new Seal.Figures.Interfaces.MyGeometry()));
         }
 
         private void toolStripButton13_Click(object sender, EventArgs e)
@@ -208,9 +209,8 @@ namespace Seal.Win
             {
                 var newPolygon = new Polygon(Convert.ToInt32(s), 100, 100);
                 seal2DCanvas1.Diagram.Add(newPolygon);
-                newPolygon.FillColor = new SharpDX.Color4(255, 0, 255, 255);
+                newPolygon.FillColor = new SharpDX.Color(255, 0, 255, 255);
             }
-            
         }
         private DialogResult ShowInputDialog(ref string input)
         {
@@ -250,7 +250,6 @@ namespace Seal.Win
             DialogResult result = inputBox.ShowDialog();
             input = textBox.Text;
             return result;
-
         }
 
 
@@ -278,6 +277,99 @@ namespace Seal.Win
             Palette pal = new Palette(this);
             pal.setIsFill(false);
             pal.Show();
+        }
+
+        private void toolStripButton22_Click(object sender, EventArgs e)
+        {
+            Random rng = new Random();
+            var ofd = new OpenFileDialog();
+            ofd.Multiselect = true;
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (var filename in ofd.FileNames)
+                {
+                    var location = new Location(rng.Next(200), rng.Next(200));
+                    var image = new Seal.Figures.ImageFigure
+                        (new Seal.Images.BitmapImageProvider(this.seal2DCanvas1.RenderTarget).Get(filename));
+                    image.Location = location;
+                    Diagram.Add(image);
+                }
+            }
+        }
+        private bool canAdd = true;
+        private void seal2DCanvas1_Click_1(object sender, EventArgs e)
+        {
+            //var rng = new Random();
+            //for (int i = 0; i < 1000; i++)
+            //{
+            //    var f = new Seal.Figures.GeometryFigure(new Seal.Geometries.RectangleGeometry());
+            //    f.Location = new Location(rng.Next(800), rng.Next(480));
+            //    Diagram.Add(f);
+            //}
+            //if (canAdd)
+            //{
+            //    var f = new Seal.Figures.GeometryFigure(new Seal.Geometries.RectangleGeometry());
+            //    f.Location = new Location(100, 100);
+            //    var f2 = new Seal.Figures.GeometryFigure(new Seal.Geometries.RectangleGeometry());
+            //    f2.Location = new Location(300, 300);
+            //    var rng = new Random();
+            //    var points = new Location[4];
+            //    for (int i = 0; i < points.Length; i++)
+            //    {
+            //        points[i] = new Location(rng.Next(400), rng.Next(400));
+            //    }
+            //    var line = new CurveLine(f, f2, points);
+            //    Diagram.Add(f);
+            //    Diagram.Add(f2);
+            //    Diagram.Add(line);
+            //    canAdd = false;
+            //}
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            Controller = ControllerFactory.Get<StrokeController>();
+        }
+
+        private void toolStripButton23_Click(object sender, EventArgs e)
+        {
+            var figures = new List<Figure>();
+            foreach(var f in Diagram.Figures)
+            {
+                if(f is StrokeFigure )
+                {
+                    figures.Add(f);
+                }
+            }
+            foreach(var f in figures)
+            {
+                Diagram.Figures.Remove(f);
+            }
+            Invalidate();
+        }
+
+        private void seal2DCanvas1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            Diagram.BringToFront(Diagram.SelectedFigure);
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            Diagram.SendToBack(Diagram.SelectedFigure);
+        }
+
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            var f = Diagram.SelectedFigure as GeometryFigure;
+            if(f!=null)
+            {
+                f.text.Value = toolStripTextBox1.Text;
+            }
         }
     }
 }

@@ -16,6 +16,25 @@ namespace Seal.Controllers
             
         }
         private ICollection<Vector2> points;
+        public override void RenderAction(Drawing.DrawingContext dc)
+        {
+            int width = 3;
+            Color color = Color.Red;
+           if(points!=null)
+            {
+                var start = points.First();
+                foreach (var p in points)
+                {
+                    if (p == start) continue;
+                    else
+                    {
+                        dc.StrokeColor = color;
+                        dc.DrawLine(start, p, width);
+                        start = p;
+                    }
+                }
+            }
+        }
         public override void MouseDownAction(System.Windows.Forms.MouseEventArgs e)
         {
             points = new LinkedList<Vector2>();
@@ -23,7 +42,7 @@ namespace Seal.Controllers
         }
         public override void MouseUpAction(System.Windows.Forms.MouseEventArgs e)
         {
-            StrokeFigure f = new StrokeFigure(points);
+            StrokeFigure f = new StrokeFigure(points, Color.Red);
             this.Diagram.Add(f);
             points = null;
         }

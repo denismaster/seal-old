@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using Seal.Geometries;
-
+using Seal.Text;
 namespace Seal.Figures
 {
     public class GeometryFigure : Figure, ILineEndable, IMarkerable, IMoveable, IScaleable, IFillColorable
     {
         private readonly IFilledGeometry geometry;
         private Location _location;
-        private SharpDX.Color4 color;
-        private SharpDX.Color4 fillColor;
-
+        private SharpDX.Color color;
+        private SharpDX.Color fillColor;
+        public readonly IText text;
+        private Location textLocation;
         public GeometryFigure(IFilledGeometry geometry)
         {
             if (geometry == null)
@@ -20,6 +21,8 @@ namespace Seal.Figures
             this.geometry = geometry;
             fillColor = SharpDX.Color.White;
             color = SharpDX.Color.Black;
+            text = new D2DText("");
+            textLocation = new Location(25 /2/ 2.0f, 25 / 2 / 2.4f);
             StrokeWidth = 1;
         }
 
@@ -28,11 +31,13 @@ namespace Seal.Figures
             return geometry.Contains(ref p);
         }
 
-        public override void Draw(Drawing.DrawingContext dc)
+        public override void Draw(Drawing.IDrawingContext dc)
         {
-            dc.StrokeBrush.Color = color;
-            dc.SolidBrush.Color = fillColor;
+            dc.StrokeColor = color;
+            dc.FillColor = fillColor;
             geometry.Draw(dc, this.Location, StrokeWidth);
+            if(text!=null)
+                text.Draw(new Location(textLocation.X+Location.X,textLocation.Y+Location.Y),dc);
         }
 
         public Size Size
@@ -103,7 +108,7 @@ namespace Seal.Figures
             return markers;
         }
 
-        public SharpDX.Color4 FillColor
+        public SharpDX.Color FillColor
         {
             get
             {
@@ -115,7 +120,7 @@ namespace Seal.Figures
             }
         }
 
-        public SharpDX.Color4 Color
+        public SharpDX.Color Color
         {
             get
             {

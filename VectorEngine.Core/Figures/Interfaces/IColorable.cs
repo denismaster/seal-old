@@ -3,7 +3,7 @@ namespace Seal.Figures
 {
     public interface IColorable
     {
-        Color4 Color
+        Color Color
         {
             get;
             set;

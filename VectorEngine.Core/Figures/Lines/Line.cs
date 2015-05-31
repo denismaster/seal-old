@@ -3,7 +3,7 @@ namespace Seal.Figures
 {
     public abstract class LineBase : Figure, IMarkerable, IColorable
     {
-        private SharpDX.Color4 _lineColor = SharpDX.Color.Black;
+        private SharpDX.Color _lineColor = SharpDX.Color.Black;
         private int _strokeWidth = 1;
 
         public LineBase(ILineEndable From, ILineEndable To)
@@ -26,7 +26,7 @@ namespace Seal.Figures
             get;
             set;
         }
-        public SharpDX.Color4 Color
+        public SharpDX.Color Color
         {
             get
             {

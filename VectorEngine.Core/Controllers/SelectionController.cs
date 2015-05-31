@@ -27,6 +27,7 @@ namespace Seal.Controllers
                 Diagram.SelectedFigure = null;
                 _markers.Clear();
             }
+           
         }
         private void UpdateMarkers()
         {

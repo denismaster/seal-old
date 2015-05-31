@@ -116,14 +116,14 @@ namespace Seal.Win
                 if (isFill)
                 {
                     (MainForm.getCanvas().Diagram.SelectedFigure as IFillColorable).FillColor = 
-                        new SharpDX.Color4(red, green, blue, 1f);
+                        new SharpDX.Color(red, green, blue, 1f);
                     Close();
                     return;
                 }
                 else
                 {
                     (MainForm.getCanvas().Diagram.SelectedFigure as IFillColorable).Color =
-                        new SharpDX.Color4(red, green, blue, 1f);
+                        new SharpDX.Color(red, green, blue, 1f);
                     Close();
                     return;
                 }
@@ -131,7 +131,7 @@ namespace Seal.Win
                 if (!isFill)
                 {
                     (MainForm.getCanvas().Diagram.SelectedFigure as IColorable).Color =
-                        new SharpDX.Color4(red, green, blue, 1f);
+                        new SharpDX.Color(red, green, blue, 1f);
                 }
             Close();
         }

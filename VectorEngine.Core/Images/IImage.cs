@@ -8,6 +8,6 @@ namespace Seal.Images
             get;
             set;
         }
-        void Draw(Seal.Drawing.DrawingContext dc, Location where);
+        void Draw(Seal.Drawing.IDrawingContext dc, Location where);
     }
 }

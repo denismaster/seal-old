@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Seal.Figures
 {
-    public class deCasteljo : Line, IPointControllable
+    public class CurveLine : Line, IPointControllable
     {
         public static float Ratio = 0.02f;
         private List<Location> _controlPoints;
@@ -60,7 +60,7 @@ namespace Seal.Figures
                 RecalcLine();
             }
         }
-        public deCasteljo(ILineEndable From, ILineEndable To, params Location[] points):base(From, To)
+        public CurveLine(ILineEndable From, ILineEndable To, params Location[] points):base(From, To)
         {
             _controlPoints = new List<Location>();
             _points = new LinkedList<Location>();
@@ -79,16 +79,16 @@ namespace Seal.Figures
                 (From as IMoveable).FigureMoved += this.OnFirstPointChanged;
             RecalcLine();
         }
-        public override void Draw(Drawing.DrawingContext dc)
+        public override void Draw(Drawing.IDrawingContext dc)
         {
-            dc.StrokeBrush.Color = this.Color;
+            dc.StrokeColor = this.Color;
             if (_points.Count < 2) return;
             SharpDX.Vector2 p0 = _points.First();
             SharpDX.Vector2 pn;
             for (var i = _points.First.Next; i != null;i=i.Next )
             {
                 pn = i.Value;
-                dc.DrawLine(p0, pn);
+                dc.DrawLine(p0, pn,1);
                 p0 = pn;
             }
 

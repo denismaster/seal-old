@@ -37,7 +37,7 @@ namespace Seal.Figures
             markers.AddLast(m);
             return markers;
         }
-        public override void Draw(Drawing.DrawingContext dc)
+        public override void Draw(Drawing.IDrawingContext dc)
         {
             var kx = drawingSize.Width/image.Size.Width;
             var ky = drawingSize.Height / image.Size.Height;

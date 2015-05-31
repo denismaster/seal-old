@@ -69,13 +69,13 @@ namespace Seal.Figures
             return true;
         }
 
-        public override void Draw(Drawing.DrawingContext g)
+        public override void Draw(Drawing.IDrawingContext g)
         {
-            g.D2DTarget.Transform = Matrix.Identity;
+            g.IdentityTransform();
             _drawingEllipse.Point = Location;
-            g.D2DTarget.FillEllipse(_drawingEllipse, g.MarkerBrush);
-
-            g.D2DTarget.DrawEllipse(_drawingEllipse, g.StrokeBrush, 0.5f);
+            g.StrokeColor = Color.Black;
+            g.FillColor = g.MarkerColor;
+            g.DrawEllipse(_drawingEllipse,Vector2.Zero);
         }
 
         public abstract void UpdateLocation();

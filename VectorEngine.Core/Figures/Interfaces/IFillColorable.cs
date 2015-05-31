@@ -8,7 +8,7 @@ namespace Seal.Figures
 {
     public interface IFillColorable:IColorable
     {
-        Color4 FillColor
+        Color FillColor
         {
             get;
             set;

@@ -59,8 +59,9 @@ namespace Seal.Figures
             pn = (Location)To.LineEnd;
             return Seal.Math.IsPointInSegment(ref p, ref p0, ref pn);
         }
-        public override void Draw(Drawing.DrawingContext dc)
+        public override void Draw(Drawing.IDrawingContext dc)
         {
+            dc.StrokeColor = this.Color;
             SharpDX.Vector2 p0 = From.LineEnd;
             SharpDX.Vector2 pn;
             foreach (var p in _points)

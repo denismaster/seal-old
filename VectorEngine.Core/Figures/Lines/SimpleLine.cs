@@ -16,9 +16,10 @@ namespace Seal.Figures
 
         }
        
-        public override void Draw(Drawing.DrawingContext dc)
+        public override void Draw(Drawing.IDrawingContext dc)
         {
-            dc.D2DTarget.DrawLine(this.From.LineEnd, this.To.LineEnd, dc.StrokeBrush);
+            dc.StrokeColor = this.Color;
+            dc.DrawLine(this.From.LineEnd, this.To.LineEnd);
         }
 
         public override LinkedList<Marker> CreateMarkers()

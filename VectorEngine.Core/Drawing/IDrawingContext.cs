@@ -10,5 +10,20 @@ namespace Seal.Drawing
         void IdentityTransform();
         void Scale(float kx, float ky);
         void Translate(float dx, float dy);
+        SharpDX.Color StrokeColor
+        {
+            get;
+            set;
+        }
+        SharpDX.Color FillColor
+        {
+            get;
+            set;
+        }
+        SharpDX.Color MarkerColor
+        {
+            get;
+            set;
+        }
     }
 }

@@ -79,6 +79,7 @@ namespace Seal2D.Control
                 PresentOptions = PresentOptions.Immediately
             };
             renderTarget = new WindowRenderTarget(D2DFactory, renderTargetProperties, hwRenderTargetProperties);
+            Seal.D2D.Initialize(this.D2DFactory, this.renderTarget);
             RenderObjectsCreated = true;
             OnCreateRenderObjects();
         }

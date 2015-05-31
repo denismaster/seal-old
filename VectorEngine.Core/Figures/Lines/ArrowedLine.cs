@@ -40,11 +40,12 @@ namespace Seal.Figures
             lineEnd1 = center - orthoVector1;
             lineEnd2 = center + orthoVector1;
         }
-        public override void Draw(Drawing.DrawingContext dc)
+        public override void Draw(Drawing.IDrawingContext dc)
         {
-            dc.D2DTarget.DrawLine(From.LineEnd, To.LineEnd, dc.StrokeBrush);
-            dc.D2DTarget.DrawLine(centerX, lineEnd1, dc.StrokeBrush);
-            dc.D2DTarget.DrawLine(centerX, lineEnd2, dc.StrokeBrush);
+            dc.StrokeColor = this.Color;
+            dc.DrawLine(From.LineEnd, To.LineEnd);
+            dc.DrawLine(centerX, lineEnd1);
+            dc.DrawLine(centerX, lineEnd2);
         }
     }
 }

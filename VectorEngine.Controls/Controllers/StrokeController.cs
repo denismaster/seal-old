@@ -23,7 +23,7 @@ namespace Seal2D.Control.Controllers
         }
         public override void MouseUpAction(System.Windows.Forms.MouseEventArgs e)
         {
-            StrokeFigure f = new StrokeFigure(points);
+            StrokeFigure f = new StrokeFigure(points,Color.Red);
             this.Diagram.Add(f);
             points = null;
         }

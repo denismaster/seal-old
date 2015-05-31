@@ -23,7 +23,7 @@ namespace Seal.Geometries
             }
         }
 
-        public void Draw(Drawing.DrawingContext dc,SharpDX.Vector2 where, int strokeWidth=1)
+        public void Draw(Drawing.IDrawingContext dc,SharpDX.Vector2 where, int strokeWidth=1)
         {
 
             _ellipse.Point.X = where.X + _ellipse.RadiusX;
